@@ -1,0 +1,201 @@
+
+[
+
+    
+    {
+        "title": "GIT - Princials comandaments",
+        "content": "Els apunts originals són d’@inclusa, aniré modificant i actualitzant al gust amb el que vaja aprenent de GITHub… Gràcies!!\n\n1. Iniciar un repositori git\n\n$ git init\n\n\n\n2. Configurar-lo\n\n$ git config --global user.name \"John Doe\" &lt;br /&gt;\n$ git config --global user.email johndoe@example.com\n\n\n\n3. Afegir arxius de rastreig\n\nCada vegada que modifiquem alguna cosa cal dir-li a GIT que ho tinga en compte.\n\n$ git add .\n\n\n\n4. Crear branca\n\n$ git checkout -b gh-pages\n\n\n\n5. Canviar de branca\n\n$ git checkout master\n\n\n\n6. Mirar en quina branca estem\n\n$ git branch\n\n\n\n7. Desfer últim commit\n\n$ git reset --hard HEAD~1\n\n\n\n8. Desfer fins arribar a 5 commits abans\n\n$ git reset --hard HEAD~5\n\n\n\nConsulta la font\n\n9 Editant l’últim commit l’última confirmació\n\n$ git commit --amend\n\n\n\nLa instantània és la mateixa, sols pots canviar el que has posat com a missatge del commit\n\n10. Desfer el que tenim al GIT local i baixar el que hi ha al server\n\n$ git fetch\n\n\n\n11. Clonar repositori remot\n\n$ git clone https://github.com/inclusa/inclusa\n\n\n\n12. Sincronitzar des del repositori remot al local\n\n$ git pull\n\n\n\n13. Sincronitzar des del repositori local al remot\n\n$ git push\n\n\n\n14. Evitar que GIT demane usuari i contrasenya\n\n$ git config --global credential.helper. store\n\n\n\nLa contrasenya del repositori remot queda magatzemada al fitxer .git-credentials\n\n15. No guardar la contrasenya en disc\n\n$ git config --global credential.helper 'cache --timeout=3600'\n\n\n\nTranscorreguda un hora tornarà a demanar la contrasenya.\n\n16. Borrar branca i borrar-la del server\n\nObjectiu: volem borrar la branca gh-pages\n\n$ git branch -d gh-pages           ##  elimina branca local\n\n$ git push origin :gh-pages        ##  elimina branca remota\n\n\n\n17. Iniciar repositori en GITHub des de terminal amb el protocol https://\n\necho \"##  repositori\" &gt;    README.md&lt;br /&gt;\ngit init&lt;br /&gt;\ngit add README.md&lt;br /&gt;\ngit commit -m \"comentari\"&lt;br /&gt;\ngit remote add origin https://github.com/usuari/repositori.git&lt;br /&gt;\ngit push -u origin master\n\n\n\n18. Explicació\n\necho: Afegix la informació al fitxer, si no existeix el crea\n\ngit init: Inicia el repositori creant els arxius de rastreig a .git\n\ngit add README.md: Afegig l’arxiu README.md per tal que es rastrege\n\ngit commit -m \"comentari\": Crea el punt d’emmagatzemmament del contigut actual, emmgatzema el contingut de del projecte establint fixant un punt, també afegeix un comentar\n\ngit add remote add origin https://: Afegeig repositori remot\n\ngit push -u origin master: publica el repositori local a la branca master remota\n\n19. Publicar a un repositori existent a GITHub des de la línia de comandamentsamb el protocol https://\n\ngit remote add origin https://github.com/usuari/repositori.git\n\ngit push -u origin master\n\n\n\n20. Iniciar repositori en GITHub des de terminal amb el protocol ssh\n\necho \"##  repositori\" &gt;    README.md&lt;br /&gt;\ngit init&lt;br /&gt;\ngit add README.md&lt;br /&gt;\ngit commit -m \"comentari\"&lt;br /&gt;\ngit remote add origin git@github.com:usuari/repositori.git&lt;br /&gt;\ngit push -u origin master&lt;br /&gt;\n\n\n\n21. Publicar a un repositori existent a GITHub des de la línia de comandamentsamb el protocol ssh\n\ngit remote add origin git@github.com:usuari/repositori.git\n\ngit push -u origin master\n\n\n\n22. Branques en GIT\n\nTots els projectes, per defecte, tenen la branca MASTER on, al final, acaben totls els desenvolupaments que fem.\n\nPodem definir altra branca, per exemple, DEVELOP on anar fent tots els xicotets canvis que necessitem fer.\n\nPer canviar de branca, per situar-nos a una altra branca\n\n$ git checkout -b develop\n\n\n\ncheckout → canvia de branca\n-b → crea la branca\n\nQuan arribem a un punt on tots els canvis que hem anat fent son estables i ens interessa que apareguen en la branca MASTER farem un merge.\n\nPrimer ens situem en la branca MASTER\n\n$ git checkout master\n\n\n\nAra li diguem que porte els canvis que hem fet a DEVELOP\n\n$ git merge develop\n\n\n\nAra tindrem una nova versió a la branca MASTER\n\nPot passar que hi hagen problemes al fer el merge, en cas que GIT no sàpiga distingir quinies són les líies bones ens ho preguntarà.\n\n23. Etiquetes en GIT\n\nPodem definir etiquetes per a gestionar versions del nostre codi o punts importants de desenvolupament, de forma que després ens siga fàcil identificar les fases de desenvolupament\n\n$ git tag -a v1.0 -m 'Versió 1.0'\n\n\n\n24. Banques en GIT\n\nLes branques són línies de treball que tenen un objectiu. Posem un exemple de diferents branques amb diferents objectius de fases del treball.\n\nMASTER: branca principal on aniran tots els canvis finals, així que, en aquest cas podriem etiquetar diverses versions explicitant les fases V0.1, v0.2, v0.3, etc.\n\nDEVELOP: branca on es realitzen canvis més xicotets, però també es proven. Pot tenir diverses subbranques.\n\nRELEASE: branca on podem agrupar certs pasos endaavnt, quan está provada podrem incorporar-ho a MASTER.\n\nMASTER\t\tRELEASE\t\tDEVELOP\nX\n|\n|\\\n| \\ __→__→__→__→__→__→__→__→__→__→__ X\n|                                    ↓\n|                                    |\n|                                    |\n|                 X __←__←__←__←__ ← X\n|                /\n|               /\n|__←__←__←__←_ X\nX               \n\n\n\n25. Si fallem podem tronar enrere\n\n$ git checkout --fitxer\n\n\n\nInclús podem dir “tot el que hem fet pins ara no val per a res”\n\n$ git fetch origin &amp;&amp; git reset --hard origin/master\n\n\n\n26. Canviar tot el contingut d’una branca\n\nSobreescrivim una branca a altra:\n\ngit branch -m master old-master\ngit branch -m gh-pages master\ngit push -f origin master\n\n\n\n-m renomena\n` -f` força\n\n27 Customitzar els colors\n\nConfigurem un alias.\n\nAra el cridarem git lg\n\ngit config --global alias.lg \"log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit\"\n\n\n\n28. GITHub\n\n\n  Iniciar repositori\n\n\n29. Fonts\n\n\n  git - la guia sencilla\n  Become a git guru\n  Pro Git\n  Cheat Sheets\n  GIT - Tutorials Point\n  Documentació base\n  Documentació base en espanyol\n  Guia ràpida de GIT\n  GIT Màgic\n\n\n30. Video\n\n  GITHub en Camon - Murcia\n  Introduction to GIT with Scott Chacon of GITHub\n\n",
+        "link": "/2017/04/29/github.html",
+        "date": "2017-04-29 12:15:26 +0200",
+        "excerpt": "",
+        "search_omit": ""
+    }
+    
+    
+
+    
+    ,{
+        "title": "Canviar fons de pantalla d'inici en Lliurex",
+        "content": "Per canviar el fons de pantalla del login de Lliurex cal editar l’arxiu de configuració que es troba en 99_lliurex.conf\n\nsudo pluma /etc/lightdm/lightdm-gtk-greeter.conf.d/99_lliurex.conf\n\n\n\ni canviem la línia background= per la ruta de la imatge que desitgem.\n\nPluma és l’editor gràfic per defecte en Lliurex, per descomptat també podeu utilitzar nano des de la terminal.\n",
+        "link": "/2017/04/24/lightmd.html",
+        "date": "2017-04-24 09:15:26 +0200",
+        "excerpt": "",
+        "search_omit": ""
+    }
+    
+    
+
+    
+    ,{
+        "title": "Augmentar velocitat de LibreOffice",
+        "content": "Per augmentar la velocitat de LibreOffice anem a Eines/Opcions. I després LibreOffice/Memòria:\n\nMemòria imatges: 128 MB\n\nMemòria per objecte: 20 MB\n\nSuprimeix de la memòria després de 00:10 segons\n\nNombre d’Objectes: 20\n",
+        "link": "/2017/04/20/libreoffice.html",
+        "date": "2017-04-20 15:19:12 +0200",
+        "excerpt": "",
+        "search_omit": ""
+    }
+    
+    
+
+    
+    ,{
+        "title": "Limitar l'ús de la CPU",
+        "content": "Si necessitem saber quins processos estan fent ús del nostre sistema:\n\n$ ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head\n\n\n\no\n\n$ ps -eo pid,comm,%cpu | sort -rk 3 | head\n\n\n\nPer limitar el consum de CPU d’un procés concret:\n\n$ sudo cpulimit -l 10 -e dropbox\n\n\n\nAquesta ordre limita l’ús del processador per a dropbox al 10%\n\nPer a instal·lar l’aplicació:\n\n$ sudo apt-get install cpulimit\n\n\n",
+        "link": "/2017/04/19/cpu.html",
+        "date": "2017-04-19 12:19:12 +0200",
+        "excerpt": "",
+        "search_omit": ""
+    }
+    
+    
+
+    
+    ,{
+        "title": "Com crear una ISO d'arranc en un USB",
+        "content": "Per a crear unitats USB d’arrancada des de Terminal cal seguir els següents passos.\nNecessitem saber exactament on s’allotja el nostre USB, només hem de teclejar el comandament:\n\n$ sudo fdisk -l\n\n\n\nDesprés caldrà utilitzar el comandament dd per escriure en l’USB:\n\n$ sudo dd if=/home/USUARI/NOM_DE_LA_ISO.iso of=/dev/sdx\n\n\n\nAnalitzem aquesta línia, if representa la ubicació on es troba la nostra ISO, of la unitat USB on es gravarà (l’obtindrem fàcilment amb fdisk -l). El temps de demora dependrà de la mida de la imatge ISO i de l’estat i propietats de la nostra clau USB.\n\nQuan finalitzem, només cal configurar la BIOS de l’equip on arrancarem amb l’USB i ja podrem utilitzar el nostre pendrive com una unitat d’inici.\n",
+        "link": "/2017/04/18/usb.html",
+        "date": "2017-04-18 10:17:12 +0200",
+        "excerpt": "",
+        "search_omit": ""
+    }
+    
+    
+
+    
+    ,{
+        "title": "Desactivar Plymouth i fons del Grub",
+        "content": "Una de les primeres coses que faig quan instal·le qualsevol sistema operatiu GNU/Linux és eliminar el Plymouth, és a dir, el logo del sistema que apareix en iniciar i finalitzar l’ordinador. Personalment m’agrada vorer passar les línies per consola que indiquen com es carreguen tots els servicis i aplicacions.\n\nPer fer-ho sols cal editar el fitxer /etc/default/grub\n\n$ sudo nano /etc/default/grub\n\n\n\nEn Lliurex la ruta és diferent:\n\n$ sudo nano /etc/default/grub.d/06-lliurex-cmdline.cfg\n\n\n\nEditem la següent línia:\n\nGRUB_CMDLINE_LINUX_DEFAULT=”quiet splash\"\n\n\n\nSols hem d’esborrar quiet splash, deixant les cometes, així:\n\nGRUB_CMDLINE_LINUX_DEFAULT=\"\"\n\n\n\nSi també voleu eliminar la imatge de fons del grub en Liurex fem:\n\nsudo nano /etc/default/grub.d/05-lliurex-background.cfg\n\n\n\nsols cal editar i deixar així:\n\nGRUB_BACKGROUND=\"\"\n\n\n\nA continuació hem d’actualitzar el grub amb el següent comandament:\n\n$ sudo update-grub\n\n\n\nD’aquesta manera deixem només el log del sistema i podrem vorer si tot carrega correctament a més de quedar més friki ;)\n",
+        "link": "/2017/04/17/plymouth.html",
+        "date": "2017-04-17 08:12:12 +0200",
+        "excerpt": "",
+        "search_omit": ""
+    }
+    
+    
+
+    
+    ,{
+        "title": "Canvia l'ordre d'arrancada en Lliurex",
+        "content": "Si volem canviar l’ordre d’arranc del nostre ordinador amb GNU/Linux el primer que hem de fer és anar a  Aplicacions/Accessoris/Terminal i teclejar:\n\n$ sudo nano /boot/grub/grub.cfg\n\n\n\no\n\n$ sudo gedit /boot/grub/grub.cfg\n\n\n\nLa primera opció ens obrirà a la mateixa terminal un editor de text senzill, la segona un editor visual més senzill encara.\n\nCoses que podem fer són canviar el temps d’espera per a seleccionar un SO. Movent-nos amb el cursor del teclat busquem la línia que diga:\n\n    if [ ${recordfail} = 1 ]; then\n    set timeout=-1\n    else\n    set timeout=10\n    fi\n    ### END /etc/grub.d/00_header ###\n\nOn diu  set timeout = 10  podeu canviar aquest número per la quantitat de segons que desitgem que ens done per triar un SO.\n\nPer finalitzar només pressionem en Nano: Control + O (per guardar), Enter, Control + X (per eixir de l’editor).\n\nSi el que volem és canviar el SO. per defecte movent-nos amb el cursor del teclat busquem la línia que diga set default=”0”:\n\n    ### BEGIN /etc/grub.d/00_header ###\n    if [ -s /boot/grub/grubenv ]; then\n    have_grubenv=true\n    load_env\n    fi\n    set default=\"0\"\n    ### BEGIN /etc/grub.d/00_header ###if [ -s /boot/grub/grubenv ]; then  have_grubenv=true  load_envfiset default=\"0\"\n\nOn diu set default = “0” canviem el  0  pel nombre de línia en la qual es troba el SO que desitgem siga el predeterminat, això ho podem saber comptant les línies que apareixen en el grub quan vam iniciar l’equip ( començant des de 0, 1, 2, … i comptant la línia que diu Other OS). Un cop sapiguem el nombre en la qual aquesta la línia, només vam canviar el  0  per aquest número i llest.\n\nEn el cas que no desitgem reiniciar per veure i explicar les línies de grub hem de buscar i comptar cada línia que diga  menuentry  (novament comptant des de 0 (zero)) i fer el mateix esmentat anteriorment.\n\nPer finalitzar només pressionem  Control + O, Enter, Control + X  (en aquest ordre).\n\nEspere que això  vos siga d’utilitat a l’hora de modificar el vostre grub2, qualsevol dubte no dubteu a consultar.\n",
+        "link": "/2017/04/16/grub.html",
+        "date": "2017-04-16 11:12:12 +0200",
+        "excerpt": "",
+        "search_omit": ""
+    }
+    
+    
+
+    
+    ,{
+        "title": "Tablets, Chromebooks i portàtils a les aules, perquè i per a què?",
+        "content": "De tant en tant, quan parle amb companys sobre la introducció de dispositius electrònics a l’aula, ni hi ha alguns que defensen la seua utilització en classe però no tenen clar com el faran servir després. Sembla que en els últims temps siga obligatori innovar i que innovar és igual a ficar maquinari de qualsevol tipus en les aules. Fa no tant, un virus col·lectiu ens va fer posar milers de pissarres digitals, la majoria de les quals actualment es fan servir només com a projectors. Això no és que estiga mal del tot, un projector a l’aula amb connexió a Internet sempre m’ha paregut una eina molt important a l’abast del professorat. Però una pissarra digital és prou més cara que un projector, ens ho podrien haver estalviat.\n\nAra arriba la “moda” de les tablets, tot el món vol tindre al seu centre i darrere venen els Chromebooks, si no aprenem d’experiències passades, tornarem a caure en els mateixos errors. Opine que el més important abans de ficar-nos en fer grans inversions és clarificar per a què utilitzarem aquest maquinari. Ens servirà per a substituir el llibre de text? Si el substituïm, serà per la plataforma digital que ofereixen les mateixes editorials? Per materials d’elaboració pròpia? O tal vegada ens servirà com a eina de suport dels materials que ja utilitzem a l’aula? Llavors farem servir activitats en línia? App’s? Programari que només funciona en un determinat sistema operatiu?\n\nClarificar al màxim aquestes qüestions ens serà útil per prendre decisions sobre si necessitem a la nostra aula, tablets, Chromebooks o portàtils i com no, quin sistema operatiu executaran (Windows, LLiurex, Android o iOS). Triar una plataforma o altra té implicacions importants, tant econòmiques, com pedagògiques i ètiques.\n\nAclarir la finalitat també ens ajudarà a triar un model d’implantació. Els dos que conec són, o bé que les famílies compren els dispositius o que siga el centre el que faça la despesa econòmica adquirint material que siga d’ús compartit, normalment utilitzant carros on guardar les tablets o portàtils. Cada opció té els seus pros i contres.\n\nDesprés hem de planificar altres aspectes importants, una bona infraestructura de comunicacions: WIFI professional que permeta molts dispositius interactuar al mateix temps i connexió ràpida a Internet. Sense oblidar la formació de mestres i alumnes, ja que moltes vegades pensem que bé de sèrie. La implicació de l’equip directiu és fonamental. Informar a les famílies de com serà el procés d’implantació i com afectarà els estudis dels seus fills. Molts detalls que cal tindre presents per a planificar una experiència la més satisfactòria possible.\n\nPer finalitzar us deixe un vídeo que he visualitzat mestres escrivia aquest post, Google aposta fort per l’educació i haurem de començar a prendre decisions malgrat que sembla que les multinacionals ja les estan prenent per nosaltres… haurem d’espavilar ;)\n\n\n",
+        "link": "/2017/04/15/tablets.html",
+        "date": "2017-04-15 11:12:12 +0200",
+        "excerpt": "",
+        "search_omit": ""
+    }
+    
+    
+
+    
+    ,{
+        "title": "Experiències amb un Chromebook i GalliumOS",
+        "content": "Fa uns mesos que sóc el feliç propietari d’un Acer Chromebook R 11, pels que no conegueu aquest tipus de maquinari, bàsicament es tracta d’un portàtil que executa Linux i el navegador Chrome, però només aquest és «visible». Quan executes el sistema disposes  del navegador i un explorador d’arxius (el local i el del núvol).\n\nEn les últimes versions a més es poden instal·lar aplicacions d’Android, gran jugada de Google sens dubte per donar valor als Chromebooks. Com que ja tinc dispositius que executen aplicacions Android no necessite aquesta funcionalitat.\n\nPersonalment el que més m’agrada és el hardware, necessitava una màquina lleugera i barata per tal de portar-la sempre a la motxilla. Chromebook sobre el paper complia aquestes premisses, vaig aconseguir una molt bona oferta a meitat de preu i no m’ho vaig pensar. Des del principi em va sorprendre la fluïdesa amb la qual funcionava tot, arrancant molt ràpidament i sobretot l’autonomia que em permetia poder estar en reunions de treball sense patir per si aguantarà la càrrega de bateria o no. També em va enamorar el fet que siga completament silenciós i no es calfe. Altres detalls com la pantalla tàctil i que es plegue completament les aprofiten millor els meus fills.\n\nCom que sóc usuari de GNU/Linux des de fa anys trobava a faltar de vegades programari i funcions necessaris per a desenvolupar les tasques diàries que realitze. Ho vaig resoldre instal·lant Crouton, amb una combinació de tecles senzilla tenia al meu abast Xubuntu 14.04… però el sistema ja no anava tan fluid i això feia que només utilitzara aquesta solució en cas d’emergència.\n\nVaig tornar a cercar alternatives i afortunadament vaig aconseguir una distribució lliure compatible amb aquest maquinari GalliumOS. La primera vegada que la vaig instal·lar va ser decepcionant, ja que no funcionava el touchpad. Vaig insistir i vaig provar sort amb la versió beta i… va funcionar… tot menys el so (amb uns auriculars Bluetooth puc sentir qualsevol àudio). Això ja ho sabia perquè en la pàgina de hardware compatible ja ho anunciava.\n\nDe l’alegria que em va donar vaig fer una donació (pràctica molt recomanable) al projecte GalliumOs per tal d’agrair que projectes com aquest continuen endavant. La sorpresa va ser que al parell de setmanes vaig rebre a casa una carta de Boston agraint la meua donació i regalant-me un parell d’adhesius que vaig aprofitar per a tapar el logo de fàbrica del Chromebook xDD\n\nMàxima satisfacció per vorer de prop com funciona la comunitat de programari lliure, amb aquest simple detall m’han guanyat per complet…\n\nAvantatges que he trobat a l’utilitzar GalliumOS que és Xubuntu adaptat per aquest maquinari. Per descomptat tot el que ja tenia amb ChromeOS, ja que incloïa Chromium per defecte i totes les funcionalitats d’un sistema operatiu complet amb els milers de programes que tinc a la meua disposició en cas de necessitat. La fluïdesa del sistema encara és millor i la duració de la bateria encara és molt llarga.\n\nUn altre avantatja és que el hardware no incloïa port ethernet i de vegades necessite aquesta funcionalitat. Amb Ubuntu sí que em detecta un adaptador USB ethernet per poder-lo utilitzar quan ho necessite, una utilitat que amb ChromeOS no podia utilitzar i de vegades ho necessite.\n\nI per últim i no menys important m’encanta quan la meua filla em demana el dispositiu per a fer dibuixos amb el TuxPaint amb els seus dits aprofitant molt més que jo la seua pantalla tàctil, una meravella, aquesta imatge és un d’elles.\n\n\n\nTot això em fa pensar, seria possible una adaptació de Lliurex amb maquinari d’aquestes característiques en un armari mòbil preparat per a qualsevol aula en tot moment?\n",
+        "link": "/2017/04/10/chromebook.html",
+        "date": "2017-04-10 14:12:12 +0200",
+        "excerpt": "",
+        "search_omit": ""
+    }
+    
+    
+
+    
+    ,{
+        "title": "Idees per a un portal educatiu",
+        "content": "Aquestes són unes reflexions al voltant del que podria contenir un portal educatiu que fóra atractiu, funcional i útil per a una comunitat educativa. És un llistat provisional que vaig adaptant segons se’m van ocorrent idees, si voleu acompanyar-me, podeu comentar aquest post.\n\nEn general:\n\n\n  Ha de ser visualment modern i responsive desing.\n  Els continguts han d’actualitzar-se amb regularitat i fer neteges periòdiques per\n eliminar el que ja no estiga vigent.\n  Usuari i contrasenya única per accedir a tots els servicis.\n\n\nPer als centres:\n\n\n  Web de centres amb WordPress Multisite.\n  Arxius. Nextcloud + LibreOffice\n  PMB centralitzat on les biblioteques de tots els centres puguen consultar el catàleg de llibres de qualsevol col·legi públic… També es podria habilitar un fòrum on els centres compartisquen experiències de com dinamitzen les biblioteques amb els seus alumnes, dubtes amb el programari, la catalogació i d’altres qüestions relacionades.\n  Comunitats. Ídem que les webs de centres. Amb renovació de continguts periòdica…\n\n\nPer a professorat:\n\n\n  Aula virtual Moodle\n  Una xarxa social pròpia. BuddyPress es pot integrar amb WordPress Multisite, incorpora fòrums i permet crear agrupacions (que podrien servir per als grups). On es puga compartir i debatre.\n  Grups. Que els mestres puguen reunir-se virtualment per grups d’interessos. Que siga molt senzill crear/sol·licitar. Preferiblement oberts per a compartir coneixement.\n  El repositori de material deu ser molt operatiu i senzill, la interfície que fora tipus Pinterest, Symbaloo… moderna i funcional. A més que els mestres es puguen subscriure per a rebre novetats dels apartats que els interesse. Pàgines de referència https://github.com/ , http://agrega.educacion.es  i  https://procomun.educalab.es/\n  Una idea que em sembla interessant seria crear un marketplace de recursos, on els mestres puguen afegir al seu compte recursos compartits per altres mestres i crear itineraris d’aprenentatge propis. Com incentivar perquè els mestres compartisquen les seues creacions…?, tal volta un sistema de punts, de premis, de…\n  El blog del professorat amb WordPress però amb possibilitat d’importar entrades de l’actual per  mantenir el treball realitzat fins ara.\n  Respecte al correu dels mestres, el portal hauria de incorporar una eina funcional i atractiva. Propose Rainloop que a més es pot integrar amb owncloud o nextcloud, és senzilla i atractiva, si la integrem en el portal, podria ajudar a fer que els mestres començaren a utilitzar el correu corporatiu.\n  Fòrums. Es podrien posar els de totes les Comunitats al mateix lloc diferenciat per seccions, amb espais per a diferents perfils, per exemple un subfòrum per a Secretaris, altre per a les diferents figures de Coordinadors que n’hi ha als centres…, etc.  Una espècie d’àgora on tots els docents puguem compartir dubtes i idees. Amb possibilitat de subscripció per rebre els missatges en el correu com en els de Moodle.\n  Suggeriment. Donar accés amb registre a qualsevol persona interessada a determinades seccions. Estic pensant en centres concertats que vulguen implantar Lliurex i/o d’altres comunitats i països…\nDocumentació. Una wiki com la de lliurex estaria molt bé per arreplegar documentació actualitzada i ordenada, on els usuaris puguen fer aportacions. Tindre tots els manuals/documents en wiki’s facilitaria el manteniment, evitant materials obsolets.\n  Un sistema d’ajuda com el que fa servir Google, per exemple.\n  Arxius. Nextcloud + LibreOffice. Nextcloud ofereix també altres ferramentes en línia molt interessant com són un calendari col·laboratiu, organitzador de tasques… i més;)\n  Vídeo, facilitar als mestres organitzar flippedclassroom\n\n\nPer als alumnes:\n\n\n  Blogs d’aula i personals\n  Xarxa social privada i supervisada…\n  Per al correu pense que el ideal és que fóra intern perquè no es pogueren registrar en servicis externs, però sí que poguera servir per a comunicació interna amb els mestres i altres alumnes.\n  Zona de recursos seleccionats per edats per a utilitzar en línia.\n  Canal de vídeo educatiu\n\n\nPer a les famílies:\n\n\n  Web Família 2.0\n  Un espai on puguen informar-se de novetats, subscripció llista de correu, RSS, xarxes socials i Telegram\n  Fer suggeriments i preguntar dubtes de Lliurex, Web Família…, etc.\n\n\nMolt important, tot això acompanyat d’una bona campanya de formació i difusió…\n\n\n  Newsletter i RSS és fonamental facilitar l’accés a les notícies que generem.\n  Presencia en xarxes socials (Twitter i Telegram).\n\n",
+        "link": "/2017/02/10/portal.html",
+        "date": "2017-02-10 13:12:12 +0100",
+        "excerpt": "",
+        "search_omit": ""
+    }
+    
+    
+
+    
+    ,{
+        "title": "Sobre la Coordinació TIC",
+        "content": "Ja està disponible en obert el “Curso inicial Coordinación TIC 2016-2017“. En el seu moment (novembre 2016) va suposar tot un repte tutoritzar un curs en què estaven convocats tots els Coordinadors Tic de la Comunitat Valenciana. Els fòrums tiraven fum… les idees, queixes, agraïments i propostes de tot tipus van ser moltíssimes i al meu cap també bullien les idees, escriure-les va ajudar a donar-li eixida, en eixe moment no vaig publicar per considerar-lo incomplet. En quant em descuide sóc prou exigent amb mi mateixa, així que ara es publiquen els continguts del curs en obert aprofite per a compartir aquesta visió sobre la Coordinació TIC inconclusa que va sorgir en eixe moment tan intens.\n\nLlevo prácticamente un mes disfrutando del curso inicial para Coordinadores TIC 2016-2017. Está siendo una experiencia muy enriquecedora compartir reflexiones sobre las TICs con tantos compañeros, personalmente me ha suscitado muchas y variadas cavilaciones que he intentado plasmar en este post. Se queda corto pero necesitaba pasar a limpio algunos de los muchos pensamientos que bullen sin parar en mi cabeza.\n\nEs un hecho que la figura de coordinador TIC no ha conseguido pasar de desempeñar la función de técnico de guardia. Hay que reconocer que es muy difícil que una sola persona reúna todo lo que se le pide. Lo ideal es que esa figura sea un poco de todo (¿a qué otro coordinador se le pide tanto?) que sea un técnico informático, con capacidad de liderazgo, capaz de motivar a los compañeros, dinamizador, empático y un largo etcétera de cualidades que raramente encontraremos reunidas en la proporción adecuada en un sólo ser humano. Una de las posibles soluciones podría ser conformar un equipo que reúna esos aspectos. Tal vez en el formato de una comisión bajo la dirección del coordinador TIC cuyo objetivo fundamental sería llevar a buen puerto una planificación que atienda a las necesidades específicas del centro.\n\nContar con un equipo que elabore un plan a corto, medio y largo plazo sería ideal. La fuerza de crear una planificación en pequeño grupo ayudaría a implicar de entrada a los miembros que lo conforman y este empuje podría ser el germen que consiga movilizar a todo el claustro. Siempre partiendo de las directrices y del apoyo comprometido del equipo directivo. Pero dado que cada centro tiene su propia idiosincrasia incluso la creación de esta comisión la supeditaría a un plan previo en el que las líneas básicas estén muy claras.  Es ahí donde la figura del coordinador TIC es fundamental, su misión sería concebir un borrador que involucre a toda la comunidad educativa, que parta de sus necesidades reales y que sea de aplicación inmediata en la labor docente diaria.\n\nNo creo en que un plan completo y cerrado deba partir del equipo directivo, sí unas líneas de actuación generales y muy motivadoras, pero empezar la casa por el tejado, de arriba hacia abajo no suele ser precisamente un aliciente para el profesorado. Un equipo dinamizador de las TICs, con unos objetivos claros, permitiría llegar a todos los rincones del centro. Esto no es incompatible con que el coordinador TIC ejerza un liderazgo que encauce adecuadamente las metas fijadas. Para ello precisa una formación acorde a sus responsabilidades que incluya no sólo contenidos informáticos sino también de relaciones interpersonales, liderazgo, organización y en definitiva todas las herramientas que le permitan desempeñar su función como un reto aportándole satisfacción en su que hacer diario.\n\nReclamar que la Administración, los CEFIRES y el SAI cumplan su función adecuadamente o que los compañeros se formen y capaciten en el uso básico de las TICs es muy importante y necesario. Pero también tenemos que poner en marcha las mejoras que están en nuestras manos y que no dependen de otras instancias ya que tenemos un amplio margen de autonomía que nos puede permitir desarrollar los planes que nos propongamos. Tengo la suerte de ser testigo de cómo con el apoyo del Claustro y del Equipo directivo se pueden hacer muchas y gratificantes acciones en el ámbito de las TIC.\n\nFinalmente considero que hay que tener cuidado con las generalizaciones ya que no hay un modelo único que sirva y se pueda aplicar a toda la casuística de todos los centros educativos, no hay una receta mágica, pero si no construimos un proyecto educativo compartido por toda la comunidad escolar, no iremos muy lejos. En resumen, tiempo, planificación y recursos…\nEl tema es amplio y complejo pero al menos ya he conseguido dar forma a algunas ideas que me venían rondando últimamente.\n",
+        "link": "/2017/01/10/ctic.html",
+        "date": "2017-01-10 13:12:12 +0100",
+        "excerpt": "",
+        "search_omit": ""
+    }
+    
+    
+
+    
+    ,{
+        "title": "Sobre el material informàtic als centres educatius",
+        "content": "L’última aventura en la qual estic embarcat (juntament amb cinc companys més) és tutoritzar un curs a l’espai de formació en xarxa del Servici de Formació del Professorat de la Comunitat Valenciana per a més de 1700 Coordinadors TIC’s. Com podeu imaginar la quantitat d’intervencions als fòrums és molt alta, he pensat copiar ací algunes de les reflexions que comparteix amb els companys perquè no es perden entre tants missatges… Us deixe la que termine de fer ara mateix respecte a com gestionar el hardware en els centres educatius:\n\nEt conte el que fem nosaltres per si pots agafar idees, tenim un “plan renove” anual, tenim establert en el pressupost una assignació d’uns mil euros per curs  per comprar maquinari nou. Com que utilitzem Lliurex des de fa anys el maquinari és molt més barat i ens dóna per adquirir unes cinc màquines per any. A voltes amb la sort de trobar bones ofertes i poder comprar inclús més. Quan arriba la dotació de Conselleria ja és una festa… l’any passat van aprofitar per a muntar una segona aula d’informàtica al centre.\nEls ordinadors nous sempre van on més ús se l’hi dóna. I els vells van a passant a llocs menys importants, amb menys ús. Així, normalment l’aula d’informàtica i les pissarres digitals tenen el maquinari més actualitzat i els racons d’aula dels alumnes els més antics…\n\nSom un centre de primària i els alumnes en els seus racons no necessiten molts requisits de maquinari. Amb clients semi lleugers de Lliurex funcionen autònomament molt bé. A més com pengen del servidor directament el manteniment d’aquestes màquines és molt senzill, quan es trenca una la canvien per una altra ràpidament.\n\nBàsicament eixa és la manera de funcionar que tenim. Aprofitem el material obsolet i al mateix temps anem renovant-lo contínuament.\n",
+        "link": "/2016/11/10/material.html",
+        "date": "2016-11-10 13:12:12 +0100",
+        "excerpt": "",
+        "search_omit": ""
+    }
+    
+    
+
+
+
+
+
+    
+    ,{
+        "title": "Bibliojocs",
+        "content": "\n",
+        "link": "/links/01_bibliojocs/",
+        "date": "2017-01-10 13:12:12 +0100",
+        "excerpt": "",
+        "search_omit": ""
+    }
+    
+    
+
+    
+    ,{
+        "title": "Edutictac",
+        "content": "Edutictac és una comunitat de docents preocupats per la innovació i per la implementació de les TIC a l’aula.\n\n\n\t\n\n\n\n",
+        "link": "/links/02_edutictac/",
+        "date": "2017-01-10 13:12:12 +0100",
+        "excerpt": "",
+        "search_omit": ""
+    }
+    
+    
+
+    
+    ,{
+        "title": "Diigo",
+        "content": "\n",
+        "link": "/links/03_diigo/",
+        "date": "2017-01-10 13:12:12 +0100",
+        "excerpt": "",
+        "search_omit": ""
+    }
+    
+    
+
+    
+    ,{
+        "title": "Coordinació TIC",
+        "content": "\n",
+        "link": "/links/04_comunitatctic/",
+        "date": "2017-01-10 13:12:12 +0100",
+        "excerpt": "",
+        "search_omit": ""
+    }
+    
+    
+
+
+]
