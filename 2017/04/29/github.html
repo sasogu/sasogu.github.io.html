@@ -257,20 +257,26 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
   <article>
     <p><em>Els apunts originals són <a href="http://inclusa.github.io/2016/03/30/GIT-Principals-comandaments-que-utilitze.html">d’@inclusa</a>, aniré modificant i actualitzant al gust amb el que vaja aprenent de GITHub… Gràcies!!</em></p>
 
-<h2 id="iniciar-un-repositori-git">1. Iniciar un repositori git</h2>
+<h2 id="iniciar-un-repositori-git">Iniciar un repositori git</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ git init
 </code></pre>
 </div>
 
-<h2 id="configurar-lo">2. Configurar-lo</h2>
+<h2 id="configurar-lo">Configurar-lo</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ git config --global user.name "John Doe" &lt;br /&gt;
 $ git config --global user.email johndoe@example.com
 </code></pre>
 </div>
 
-<h2 id="afegir-arxius-de-rastreig">3. Afegir arxius de rastreig</h2>
+<h2 id="seguir-els-canvis">Seguir els canvis</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git status
+</code></pre>
+</div>
+
+<h2 id="afegir-arxius-de-rastreig">Afegir arxius de rastreig</h2>
 
 <p>Cada vegada que modifiquem alguna cosa cal dir-li a GIT que ho tinga en compte.</p>
 
@@ -278,31 +284,31 @@ $ git config --global user.email johndoe@example.com
 </code></pre>
 </div>
 
-<h2 id="crear-branca">4. Crear branca</h2>
+<h2 id="crear-branca">Crear branca</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ git checkout -b gh-pages
 </code></pre>
 </div>
 
-<h2 id="canviar-de-branca">5. Canviar de branca</h2>
+<h2 id="canviar-de-branca">Canviar de branca</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ git checkout master
 </code></pre>
 </div>
 
-<h2 id="mirar-en-quina-branca-estem">6. Mirar en quina branca estem</h2>
+<h2 id="mirar-en-quina-branca-estem">Mirar en quina branca estem</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ git branch
 </code></pre>
 </div>
 
-<h2 id="desfer-ltim-commit">7. Desfer últim commit</h2>
+<h2 id="desfer-ltim-commit">Desfer últim commit</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ git reset --hard HEAD~1
 </code></pre>
 </div>
 
-<h2 id="desfer-fins-arribar-a-5-commits-abans">8. Desfer fins arribar a 5 commits abans</h2>
+<h2 id="desfer-fins-arribar-a-5-commits-abans">Desfer fins arribar a 5 commits abans</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ git reset --hard HEAD~5
 </code></pre>
@@ -310,7 +316,7 @@ $ git config --global user.email johndoe@example.com
 
 <p><a href="https://git-scm.com/book/es/v1/Fundamentos-de-Git-Deshaciendo-cosas">Consulta la font</a></p>
 
-<h2 id="editant-lltim-commit-lltima-confirmaci">9 Editant l’últim commit l’última confirmació</h2>
+<h2 id="editant-lltim-commit-lltima-confirmaci">Editant l’últim commit l’última confirmació</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ git commit --amend
 </code></pre>
@@ -318,31 +324,31 @@ $ git config --global user.email johndoe@example.com
 
 <p>La instantània és la mateixa, sols pots canviar el que has posat com a missatge del commit</p>
 
-<h2 id="desfer-el-que-tenim-al-git-local-i-baixar-el-que-hi-ha-al-server">10. Desfer el que tenim al GIT local i baixar el que hi ha al server</h2>
+<h2 id="desfer-el-que-tenim-al-git-local-i-baixar-el-que-hi-ha-al-server">Desfer el que tenim al GIT local i baixar el que hi ha al server</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ git fetch
 </code></pre>
 </div>
 
-<h2 id="clonar-repositori-remot">11. Clonar repositori remot</h2>
+<h2 id="clonar-repositori-remot">Clonar repositori remot</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/sasogu/sasogu
 </code></pre>
 </div>
 
-<h2 id="sincronitzar-des-del-repositori-remot-al-local">12. Sincronitzar des del repositori remot al local</h2>
+<h2 id="sincronitzar-des-del-repositori-remot-al-local">Sincronitzar des del repositori remot al local</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ git pull
 </code></pre>
 </div>
 
-<h2 id="sincronitzar-des-del-repositori-local-al-remot">13. Sincronitzar des del repositori local al remot</h2>
+<h2 id="sincronitzar-des-del-repositori-local-al-remot">Sincronitzar des del repositori local al remot</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ git push
 </code></pre>
 </div>
 
-<h2 id="evitar-que-git-demane-usuari-i-contrasenya">14. Evitar que GIT demane usuari i contrasenya</h2>
+<h2 id="evitar-que-git-demane-usuari-i-contrasenya">Evitar que GIT demane usuari i contrasenya</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ git config --global credential.helper store
 </code></pre>
@@ -350,7 +356,7 @@ $ git config --global user.email johndoe@example.com
 
 <p>La contrasenya del repositori remot queda magatzemada al fitxer <code class="highlighter-rouge">.git-credentials</code></p>
 
-<h2 id="no-guardar-la-contrasenya-en-disc">15. No guardar la contrasenya en disc</h2>
+<h2 id="no-guardar-la-contrasenya-en-disc">No guardar la contrasenya en disc</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ git config --global credential.helper 'cache --timeout=3600'
 </code></pre>
@@ -358,7 +364,7 @@ $ git config --global user.email johndoe@example.com
 
 <p>Transcorreguda un hora tornarà a demanar la contrasenya.</p>
 
-<h2 id="borrar-branca-i-borrar-la-del-server">16. Borrar branca i borrar-la del server</h2>
+<h2 id="borrar-branca-i-borrar-la-del-server">Borrar branca i borrar-la del server</h2>
 
 <p>Objectiu: volem borrar la branca gh-pages</p>
 
@@ -368,7 +374,7 @@ $ git push origin :gh-pages        ##  elimina branca remota
 </code></pre>
 </div>
 
-<h2 id="iniciar-repositori-en-github-des-de-terminal-amb-el-protocol-https">17. Iniciar repositori en GITHub des de terminal amb el protocol <code class="highlighter-rouge">https://</code></h2>
+<h2 id="iniciar-repositori-en-github-des-de-terminal-amb-el-protocol-https">Iniciar repositori en GITHub des de terminal amb el protocol <code class="highlighter-rouge">https://</code></h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>echo "##  repositori"    README.md
 git init
@@ -379,7 +385,7 @@ git push -u origin master
 </code></pre>
 </div>
 
-<h2 id="explicaci">18. Explicació</h2>
+<h3 id="explicaci">Explicació</h3>
 
 <p><code class="highlighter-rouge">echo</code>: Afegix la informació al fitxer, si no existeix el crea</p>
 
@@ -393,7 +399,7 @@ git push -u origin master
 
 <p><code class="highlighter-rouge">git push -u origin master</code>: publica el repositori local a la branca <code class="highlighter-rouge">master</code> remota</p>
 
-<h2 id="publicar-a-un-repositori-existent-a-github-des-de-la-lnia-de-comandamentsamb-el-protocol-https">19. Publicar a un repositori existent a GITHub des de la línia de comandamentsamb el protocol <code class="highlighter-rouge">https://</code></h2>
+<h2 id="publicar-a-un-repositori-existent-a-github-des-de-la-lnia-de-comandamentsamb-el-protocol-https">Publicar a un repositori existent a GITHub des de la línia de comandamentsamb el protocol <code class="highlighter-rouge">https://</code></h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>git remote add origin https://github.com/usuari/repositori.git
 
@@ -401,7 +407,7 @@ git push -u origin master
 </code></pre>
 </div>
 
-<h2 id="branques-en-git">20. Branques en GIT</h2>
+<h2 id="branques-en-git">Branques en GIT</h2>
 
 <p>Tots els projectes, per defecte, tenen la branca MASTER on, al final, acaben totls els desenvolupaments que fem.</p>
 
@@ -434,14 +440,7 @@ git push -u origin master
 
 <p>Pot passar que hi hagen problemes al fer el <code class="highlighter-rouge">merge</code>, en cas que GIT no sàpiga distingir quinies són les líies bones ens ho preguntarà.</p>
 
-<h2 id="etiquetes-en-git">21. Etiquetes en GIT</h2>
-<p>Podem definir etiquetes per a gestionar versions del nostre codi o punts importants de desenvolupament, de forma que després ens siga fàcil identificar les fases de desenvolupament</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git tag -a v1.0 -m 'Versió 1.0'
-</code></pre>
-</div>
-
-<h2 id="banques-en-git">22. Banques en GIT</h2>
+<h2 id="branques-en-git-1">Branques en GIT</h2>
 
 <p>Les branques són línies de treball que tenen un objectiu. Posem un exemple de diferents branques amb diferents objectius de fases del treball.</p>
 
@@ -463,23 +462,31 @@ X
 |                /
 |               /
 |__←__←__←__←_ X
-X               
+X          
 </code></pre>
 </div>
 
-<h2 id="si-fallem-podem-tronar-enrere">23. Si fallem podem tronar enrere</h2>
+<h2 id="etiquetes-en-git">Etiquetes en GIT</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git checkout --fitxer
+<p>Podem definir etiquetes per a gestionar versions del nostre codi o punts importants de desenvolupament, de forma que després ens siga fàcil identificar les fases de desenvolupament</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  $ git tag -a v1.0 -m 'Versió 1.0'     
 </code></pre>
 </div>
 
-<p>Inclús podem dir “tot el que hem fet pins ara no val per a res”</p>
+<h2 id="si-fallem-podem-tronar-enrere">Si fallem podem tronar enrere</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git fetch origin &amp;&amp; git reset --hard origin/master
+<div class="highlighter-rouge"><pre class="highlight"><code>  $ git checkout --fitxer
 </code></pre>
 </div>
 
-<h2 id="canviar-tot-el-contingut-duna-branca">24. Canviar tot el contingut d’una branca</h2>
+<p>Inclús podem dir “tot el que hem fet fins ara no val per a res”</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  $ git fetch origin &amp;&amp; git reset --hard origin/master
+</code></pre>
+</div>
+
+<h2 id="canviar-tot-el-contingut-duna-branca">Canviar tot el contingut d’una branca</h2>
 
 <p>Sobreescrivim una branca a altra:</p>
 
@@ -490,9 +497,9 @@ git push -f origin master
 </div>
 
 <p><code class="highlighter-rouge">-m</code> renomena
-` -f` força</p>
+<code class="highlighter-rouge">-f</code> força</p>
 
-<h2 id="customitzar-els-colors">25 Customitzar els colors</h2>
+<h2 id="customitzar-els-colors">Customitzar els colors</h2>
 
 <p>Configurem un alias.</p>
 
@@ -502,13 +509,13 @@ git push -f origin master
 </code></pre>
 </div>
 
-<h2 id="github">26. GITHub</h2>
+<h2 id="github">GITHub</h2>
 
 <ul>
   <li><a href="https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/#platform-linux">Iniciar repositori</a></li>
 </ul>
 
-<h2 id="fonts">27. Fonts</h2>
+<h2 id="fonts">Fonts</h2>
 
 <ul>
   <li><a href="http://rogerdudler.github.io/git-guide/index.es.html">git - la guia sencilla</a></li>
@@ -522,7 +529,7 @@ git push -f origin master
   <li><a href="http://www-cs-students.stanford.edu/~blynn/gitmagic/intl/es/">GIT Màgic</a></li>
 </ul>
 
-<h2 id="video">28. Video</h2>
+<h2 id="video">Video</h2>
 <ul>
   <li><a href="https://vimeo.com/39829002">GITHub en Camon - Murcia</a></li>
   <li><a href="https://www.youtube.com/watch?v=ZDR433b0HJY">Introduction to GIT with Scott Chacon of GITHub</a></li>
