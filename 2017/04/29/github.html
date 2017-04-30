@@ -257,6 +257,8 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
   <article>
     <p><em>Els apunts originals són <a href="http://inclusa.github.io/2016/03/30/GIT-Principals-comandaments-que-utilitze.html">d’@inclusa</a>, aniré modificant i actualitzant al gust amb el que vaja aprenent de GITHub… Gràcies!!</em></p>
 
+<h1 id="comandaments-fonamentals">Comandaments fonamentals</h1>
+
 <h2 id="iniciar-un-repositori-git">Iniciar un repositori git</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ git init
@@ -269,6 +271,14 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
 $ git config --global user.email johndoe@example.com
 </code></pre>
 </div>
+
+<h2 id="evitar-que-git-demane-usuari-i-contrasenya">Evitar que GIT demane usuari i contrasenya</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git config --global credential.helper store
+</code></pre>
+</div>
+
+<p>La contrasenya del repositori remot queda magatzemada al fitxer <code class="highlighter-rouge">.git-credentials</code></p>
 
 <h2 id="seguir-els-canvis">Seguir els canvis</h2>
 
@@ -283,6 +293,28 @@ $ git config --global user.email johndoe@example.com
 <div class="highlighter-rouge"><pre class="highlight"><code>$ git add .
 </code></pre>
 </div>
+
+<h2 id="clonar-repositori-remot">Clonar repositori remot</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/sasogu/sasogu
+</code></pre>
+</div>
+
+<h2 id="sincronitzar-des-del-repositori-remot-al-local">Sincronitzar des del repositori remot al local</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git pull
+</code></pre>
+</div>
+
+<h2 id="sincronitzar-des-del-repositori-local-al-remot">Sincronitzar des del repositori local al remot</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git push
+</code></pre>
+</div>
+
+<p>Opcional afegir la ruta <code class="highlighter-rouge">htpps</code> per apuntar a un repositori concret.</p>
+
+<h1 id="altres-comandaments">Altres comandaments</h1>
 
 <h2 id="crear-branca">Crear branca</h2>
 
@@ -302,6 +334,30 @@ $ git config --global user.email johndoe@example.com
 </code></pre>
 </div>
 
+<h2 id="canviar-tot-el-contingut-duna-branca">Canviar tot el contingut d’una branca</h2>
+
+<p>Sobreescrivim una branca a altra:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  git branch -m master old-master
+  git branch -m gh-pages master
+  git push -f origin master
+</code></pre>
+</div>
+
+<p><code class="highlighter-rouge">-m</code> renomena</p>
+
+<p><code class="highlighter-rouge">-f</code> força</p>
+
+<h2 id="borrar-branca-i-borrar-la-del-server">Borrar branca i borrar-la del server</h2>
+
+<p>Objectiu: volem borrar la branca gh-pages</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git branch -d gh-pages           ##  elimina branca local
+
+$ git push origin :gh-pages        ##  elimina branca remota
+</code></pre>
+</div>
+
 <h2 id="desfer-ltim-commit">Desfer últim commit</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ git reset --hard HEAD~1
@@ -316,7 +372,7 @@ $ git config --global user.email johndoe@example.com
 
 <p><a href="https://git-scm.com/book/es/v1/Fundamentos-de-Git-Deshaciendo-cosas">Consulta la font</a></p>
 
-<h2 id="editant-lltim-commit-lltima-confirmaci">Editant l’últim commit l’última confirmació</h2>
+<h2 id="editant-lltim-commit-i-lltima-confirmaci">Editant l’últim commit i l’última confirmació</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ git commit --amend
 </code></pre>
@@ -342,48 +398,6 @@ $ git config --global user.email johndoe@example.com
 </code></pre>
 </div>
 
-<h2 id="canviar-tot-el-contingut-duna-branca">Canviar tot el contingut d’una branca</h2>
-
-<p>Sobreescrivim una branca a altra:</p>
-
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>    git branch -m master old-master
-    git branch -m gh-pages master
-    git push -f origin master
-</code></pre>
-</div>
-
-<p><code class="highlighter-rouge">-m</code> renomena</p>
-
-<p><code class="highlighter-rouge">-f</code> força</p>
-
-<h2 id="clonar-repositori-remot">Clonar repositori remot</h2>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/sasogu/sasogu
-</code></pre>
-</div>
-
-<h2 id="sincronitzar-des-del-repositori-remot-al-local">Sincronitzar des del repositori remot al local</h2>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git pull
-</code></pre>
-</div>
-
-<h2 id="sincronitzar-des-del-repositori-local-al-remot">Sincronitzar des del repositori local al remot</h2>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git push
-</code></pre>
-</div>
-
-<p><strong><em>Opcional afegir la ruta htpps per apuntar a un repositori concret.</em></strong></p>
-
-<h2 id="evitar-que-git-demane-usuari-i-contrasenya">Evitar que GIT demane usuari i contrasenya</h2>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git config --global credential.helper store
-</code></pre>
-</div>
-
-<p>La contrasenya del repositori remot queda magatzemada al fitxer <code class="highlighter-rouge">.git-credentials</code></p>
-
 <h2 id="no-guardar-la-contrasenya-en-disc">No guardar la contrasenya en disc</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ git config --global credential.helper 'cache --timeout=3600'
@@ -391,16 +405,6 @@ $ git config --global user.email johndoe@example.com
 </div>
 
 <p>Transcorreguda un hora tornarà a demanar la contrasenya.</p>
-
-<h2 id="borrar-branca-i-borrar-la-del-server">Borrar branca i borrar-la del server</h2>
-
-<p>Objectiu: volem borrar la branca gh-pages</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git branch -d gh-pages           ##  elimina branca local
-
-$ git push origin :gh-pages        ##  elimina branca remota
-</code></pre>
-</div>
 
 <h2 id="iniciar-repositori-en-github-des-de-terminal-amb-el-protocol-https">Iniciar repositori en GITHub des de terminal amb el protocol <code class="highlighter-rouge">https://</code></h2>
 

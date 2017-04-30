@@ -4,7 +4,7 @@
  <title>sasogu</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2017-04-30T23:04:24+02:00</updated>
+ <updated>2017-04-30T23:21:23+02:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>sasogu</name>
@@ -137,6 +137,8 @@
    <id>http://localhost:4000/2017/04/29/github</id>
    <content type="html">&lt;p&gt;&lt;em&gt;Els apunts originals són &lt;a href=&quot;http://inclusa.github.io/2016/03/30/GIT-Principals-comandaments-que-utilitze.html&quot;&gt;d’@inclusa&lt;/a&gt;, aniré modificant i actualitzant al gust amb el que vaja aprenent de GITHub… Gràcies!!&lt;/em&gt;&lt;/p&gt;
 
+&lt;h1 id=&quot;comandaments-fonamentals&quot;&gt;Comandaments fonamentals&lt;/h1&gt;
+
 &lt;h2 id=&quot;iniciar-un-repositori-git&quot;&gt;Iniciar un repositori git&lt;/h2&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git init
@@ -149,6 +151,14 @@
 $ git config --global user.email johndoe@example.com
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+
+&lt;h2 id=&quot;evitar-que-git-demane-usuari-i-contrasenya&quot;&gt;Evitar que GIT demane usuari i contrasenya&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git config --global credential.helper store
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;La contrasenya del repositori remot queda magatzemada al fitxer &lt;code class=&quot;highlighter-rouge&quot;&gt;.git-credentials&lt;/code&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;seguir-els-canvis&quot;&gt;Seguir els canvis&lt;/h2&gt;
 
@@ -163,6 +173,28 @@ $ git config --global user.email johndoe@example.com
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git add .
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+
+&lt;h2 id=&quot;clonar-repositori-remot&quot;&gt;Clonar repositori remot&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git clone https://github.com/sasogu/sasogu
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;sincronitzar-des-del-repositori-remot-al-local&quot;&gt;Sincronitzar des del repositori remot al local&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git pull
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;sincronitzar-des-del-repositori-local-al-remot&quot;&gt;Sincronitzar des del repositori local al remot&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git push
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Opcional afegir la ruta &lt;code class=&quot;highlighter-rouge&quot;&gt;htpps&lt;/code&gt; per apuntar a un repositori concret.&lt;/p&gt;
+
+&lt;h1 id=&quot;altres-comandaments&quot;&gt;Altres comandaments&lt;/h1&gt;
 
 &lt;h2 id=&quot;crear-branca&quot;&gt;Crear branca&lt;/h2&gt;
 
@@ -182,6 +214,30 @@ $ git config --global user.email johndoe@example.com
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
+&lt;h2 id=&quot;canviar-tot-el-contingut-duna-branca&quot;&gt;Canviar tot el contingut d’una branca&lt;/h2&gt;
+
+&lt;p&gt;Sobreescrivim una branca a altra:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  git branch -m master old-master
+  git branch -m gh-pages master
+  git push -f origin master
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-m&lt;/code&gt; renomena&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-f&lt;/code&gt; força&lt;/p&gt;
+
+&lt;h2 id=&quot;borrar-branca-i-borrar-la-del-server&quot;&gt;Borrar branca i borrar-la del server&lt;/h2&gt;
+
+&lt;p&gt;Objectiu: volem borrar la branca gh-pages&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git branch -d gh-pages           ##  elimina branca local
+
+$ git push origin :gh-pages        ##  elimina branca remota
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
 &lt;h2 id=&quot;desfer-ltim-commit&quot;&gt;Desfer últim commit&lt;/h2&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git reset --hard HEAD~1
@@ -196,7 +252,7 @@ $ git config --global user.email johndoe@example.com
 
 &lt;p&gt;&lt;a href=&quot;https://git-scm.com/book/es/v1/Fundamentos-de-Git-Deshaciendo-cosas&quot;&gt;Consulta la font&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;editant-lltim-commit-lltima-confirmaci&quot;&gt;Editant l’últim commit l’última confirmació&lt;/h2&gt;
+&lt;h2 id=&quot;editant-lltim-commit-i-lltima-confirmaci&quot;&gt;Editant l’últim commit i l’última confirmació&lt;/h2&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git commit --amend
 &lt;/code&gt;&lt;/pre&gt;
@@ -222,48 +278,6 @@ $ git config --global user.email johndoe@example.com
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;h2 id=&quot;canviar-tot-el-contingut-duna-branca&quot;&gt;Canviar tot el contingut d’una branca&lt;/h2&gt;
-
-&lt;p&gt;Sobreescrivim una branca a altra:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    git branch -m master old-master
-    git branch -m gh-pages master
-    git push -f origin master
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-m&lt;/code&gt; renomena&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-f&lt;/code&gt; força&lt;/p&gt;
-
-&lt;h2 id=&quot;clonar-repositori-remot&quot;&gt;Clonar repositori remot&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git clone https://github.com/sasogu/sasogu
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;sincronitzar-des-del-repositori-remot-al-local&quot;&gt;Sincronitzar des del repositori remot al local&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git pull
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;sincronitzar-des-del-repositori-local-al-remot&quot;&gt;Sincronitzar des del repositori local al remot&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git push
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Opcional afegir la ruta htpps per apuntar a un repositori concret.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;evitar-que-git-demane-usuari-i-contrasenya&quot;&gt;Evitar que GIT demane usuari i contrasenya&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git config --global credential.helper store
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;La contrasenya del repositori remot queda magatzemada al fitxer &lt;code class=&quot;highlighter-rouge&quot;&gt;.git-credentials&lt;/code&gt;&lt;/p&gt;
-
 &lt;h2 id=&quot;no-guardar-la-contrasenya-en-disc&quot;&gt;No guardar la contrasenya en disc&lt;/h2&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git config --global credential.helper 'cache --timeout=3600'
@@ -271,16 +285,6 @@ $ git config --global user.email johndoe@example.com
 &lt;/div&gt;
 
 &lt;p&gt;Transcorreguda un hora tornarà a demanar la contrasenya.&lt;/p&gt;
-
-&lt;h2 id=&quot;borrar-branca-i-borrar-la-del-server&quot;&gt;Borrar branca i borrar-la del server&lt;/h2&gt;
-
-&lt;p&gt;Objectiu: volem borrar la branca gh-pages&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git branch -d gh-pages           ##  elimina branca local
-
-$ git push origin :gh-pages        ##  elimina branca remota
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;h2 id=&quot;iniciar-repositori-en-github-des-de-terminal-amb-el-protocol-https&quot;&gt;Iniciar repositori en GITHub des de terminal amb el protocol &lt;code class=&quot;highlighter-rouge&quot;&gt;https://&lt;/code&gt;&lt;/h2&gt;
 
