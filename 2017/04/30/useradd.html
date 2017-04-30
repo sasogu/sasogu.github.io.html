@@ -11,7 +11,7 @@
 
   <title>
     
-      Desactivar Plymouth i fons del Grub &middot; sasogu
+      Gestionar usuaris des de terminal &middot; sasogu
     
   </title>
 
@@ -244,62 +244,121 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">Desactivar Plymouth i fons del Grub</h1>
-  <!--   <span class="post-date">17 Apr 2017</span> -->
-<span class="post-date"><time datetime="2017-04-17 08:12:12 +0200">17 d'abril del 2017</time></span>
+  <h1 class="post-title">Gestionar usuaris des de terminal</h1>
+  <!--   <span class="post-date">30 Apr 2017</span> -->
+<span class="post-date"><time datetime="2017-04-30 12:16:26 +0200">30 d'abril del 2017</time></span>
    |
   
-    <a href="/blog/tags/#plymouth" class="post-tag">plymouth</a>
+    <a href="/blog/tags/#lliurex" class="post-tag">lliurex</a>
   
-    <a href="/blog/tags/#lliurex-16" class="post-tag">lliurex 16</a>
+    <a href="/blog/tags/#desktop" class="post-tag">desktop</a>
   
   
   <article>
-    <p>Una de les primeres coses que faig quan instal·le qualsevol sistema operatiu GNU/Linux és eliminar el Plymouth, és a dir, el logo del sistema que apareix en iniciar i finalitzar l’ordinador. Personalment m’agrada vorer passar les línies per consola que indiquen com es carreguen tots els servicis i aplicacions.</p>
+    <h2 id="afegir-usuaris">Afegir usuaris</h2>
 
-<p>Per fer-ho sols cal editar el fitxer /etc/default/grub</p>
+<p><strong>Comandament:</strong> <code class="highlighter-rouge">useradd</code></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo nano /etc/default/grub
-</code></pre>
-</div>
+<p><strong>Sintaxis:</strong> <code class="highlighter-rouge">useradd [modificadors] login</code></p>
 
-<p>En Lliurex la ruta és diferent:</p>
+<p><strong>Modificadors:</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo nano /etc/default/grub.d/06-lliurex-cmdline.cfg
-</code></pre>
-</div>
+<p>-c: afegeix un comentari (camp 5 de passwd)</p>
 
-<p>Editem la següent línia:</p>
+<p>-d: estableix el directori home de l’usuari que per defecte és /home/login (camp 6)</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>GRUB_CMDLINE_LINUX_DEFAULT=”quiet splash"
-</code></pre>
-</div>
+<p>-e: data expiració del compte, amb format AAAA-MM-DD (camp 8 de shadow)</p>
 
-<p>Sols hem d’esborrar <strong>quiet splash</strong>, deixant les cometes, així:</p>
+<p>-g: nom del grup principal (ha d’existir el grup)</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>GRUB_CMDLINE_LINUX_DEFAULT=""
-</code></pre>
-</div>
+<p>-G: noms dels altres grups als que pot pertanyer, separats per “,”</p>
 
-<p>Si també voleu eliminar la imatge de fons del grub en Liurex fem:</p>
+<p>-s: shell per defecte. Si no s’especifica serà bash.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo nano /etc/default/grub.d/05-lliurex-background.cfg
-</code></pre>
-</div>
+<p>-m: crea el directori home si no existeix copia els fitxers del directori /etc/skel al directori home. Per defecte no el crea ni copia els fitxers. Es complementa amb -k.</p>
 
-<p>sols cal editar i deixar així:</p>
+<p>-k: copia els fitxers del directori especificat en el directori home de l’usuari. Solament és vàlida junt amb -m.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>GRUB_BACKGROUND=""
-</code></pre>
-</div>
+<h3 id="valors-per-defecte">Valors per defecte:</h3>
 
-<p>A continuació hem <strong>d’actualitzar el grub</strong> amb el següent comandament:</p>
+<p>El programa <strong>useradd</strong> utilitza una colecció de valors per defecte emmagatzemats en /etc/default/useradd.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo update-grub
-</code></pre>
-</div>
+<p>Es poden veure els valors per defecte executant:    <br />
+  &gt; $ useradd -D</p>
 
-<p>D’aquesta manera deixem només el log del sistema i podrem vorer si tot carrega correctament a més de quedar més friki ;)</p>
+<p>Es pot observar que falta l’intèrpret de comandaments per defecte. Per afegir-lo hem de fer:
+&gt; $useradd -D -s /bin/bash</p>
+
+<p>També es pot editar el fitxer i afegir o ajustar els valors al nostre gust.</p>
+
+<h3 id="combinacions">Combinacions:</h3>
+
+<p><code class="highlighter-rouge">$sudo useradd login</code> -&gt; crea un usuari sense directori home.</p>
+
+<p><code class="highlighter-rouge">$sudo useradd -m login</code> -&gt; crea un usuari amb directori home i li còpia els fitxers ubicats en /etc/skel.</p>
+
+<p><code class="highlighter-rouge">$sudo useradd -m -d /home/nom_usuari login</code> -&gt; crea un usuari amb directori home diferent al que se li otorga per defecte, es a dir, diferent a /home/login i li còpia els fitxers ubicats en /etc/skel.</p>
+
+<p><code class="highlighter-rouge">$sudo useradd -m -k /etc/skel/usuaris login</code> -&gt; crea un usuari amb directori home per defecte i li còpia els fitxers ubicats en /etc/skel/usuaris.</p>
+
+<h2 id="modificar-usuaris">Modificar usuaris</h2>
+
+<p><strong>Comandament:</strong> <code class="highlighter-rouge">usermod</code></p>
+
+<p><strong>Sintaxis:</strong> <code class="highlighter-rouge">usermod [modificadors] login</code></p>
+
+<h3 id="modificadors">Modificadors:</h3>
+
+<p>-c: afegeix o modifica el comentari</p>
+
+<p>-d: modifica el directori home</p>
+
+<p>-e: canvia o estableix la data d’expiració del compte</p>
+
+<p>-g: canvia el grup principal</p>
+
+<p>-G: estableix altres grups per l’usuari</p>
+
+<p>-l: canvia el login (camp 1 de passwd i 5 de shadow)</p>
+
+<p>-L: bloqueja el compte de l’usuari no permetent ingressar al sistema</p>
+
+<p>-s: canvia el shell per defecte</p>
+
+<p>-u: canvia el UID de l’usuari</p>
+
+<p>-U: desbloqueja un compte bloquejat amb -L</p>
+
+<h2 id="eliminar-usuaris">Eliminar usuaris</h2>
+<p><strong>Comandament:</strong> <code class="highlighter-rouge">userdel</code></p>
+
+<p><strong>Notes:</strong> No es pot eliminar un usuari si ha ingressat al sistema. Elimina el compte de /etc/passwd i /etc/shadow però no elimina el directori de treball.</p>
+
+<p><strong>Sintaxis:</strong> <code class="highlighter-rouge">userdel [modificadors] login</code></p>
+
+<p><strong>Modificadors:</strong></p>
+
+<p>-r: elimina el compte i, a més a més, el seu directori de treball amb el seu contingut i la bústia de correu.</p>
+
+<p>-f: igual que -r però sense importar si l’usuari ha ingressat al sistema.</p>
+
+<h2 id="assignar-o-modificar-contrassenyes">Assignar o modificar contrassenyes</h2>
+
+<p><strong>Comandament:</strong> <code class="highlighter-rouge">passwd</code></p>
+
+<p><strong>Notes:</strong> Només pot canviar les contrassenyes el propi usuari i el root. Disposa d’un sistema de validació que ens informarà de si la contrasenya és “coneguda”. Si no s’especifica el login canvia el password del compte actual.</p>
+
+<p><strong>Sintaxis:</strong> <code class="highlighter-rouge">passwd [modificadors] login</code></p>
+
+<h3 id="modificadors-1">Modificadors:</h3>
+
+<p>-S: informa de la política del compte de l’usuari (estat del compte: L bloquejada, NP sense clau i P amb clau), data del darrer canvi de clau, temps de canvi de clau, temps d’avís i temps de desactivació)</p>
+
+<p>-u: desbloqueja un compte bloquejat amb -L</p>
+
+<p>-l: bloqueja el compte de l’usuari no permetent ingressar al sistema</p>
+
+<p>-g: canvia o assigna la password a un grup</p>
 
   </article>
 </div>
@@ -307,15 +366,6 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
 <div class="related">
   <h2>Articles relacionats</h2>
   <ul class="related-posts">
-    
-      <li>
-        <h3>
-          <a href="/2017/04/30/useradd.html">
-            Gestionar usuaris des de terminal
-            <small>30 Apr 2017</small>
-          </a>
-        </h3>
-      </li>
     
       <li>
         <h3>
@@ -335,6 +385,15 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
         </h3>
       </li>
     
+      <li>
+        <h3>
+          <a href="/2017/04/20/libreoffice.html">
+            Augmentar velocitat de LibreOffice
+            <small>20 Apr 2017</small>
+          </a>
+        </h3>
+      </li>
+    
   </ul>
 </div>
 
@@ -344,8 +403,8 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
   <div id="disqus_thread"></div>
   <script>
 var disqus_config = function () {
-  this.page.url = 'http://localhost:4000/2017/04/17/plymouth.html'; // Replace PAGE_URL with your page's canonical URL variable
-  this.page.identifier = '/2017/04/17/plymouth'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  this.page.url = 'http://localhost:4000/2017/04/30/useradd.html'; // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = '/2017/04/30/useradd'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 (function() {
   var d = document, s = d.createElement('script');
