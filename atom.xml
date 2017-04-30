@@ -4,7 +4,7 @@
  <title>sasogu</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2017-04-30T07:29:36+02:00</updated>
+ <updated>2017-04-30T08:44:41+02:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>sasogu</name>
@@ -132,11 +132,11 @@ $ git push origin :gh-pages        ##  elimina branca remota
 
 &lt;h2 id=&quot;iniciar-repositori-en-github-des-de-terminal-amb-el-protocol-https&quot;&gt;17. Iniciar repositori en GITHub des de terminal amb el protocol &lt;code class=&quot;highlighter-rouge&quot;&gt;https://&lt;/code&gt;&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;echo &quot;##  repositori&quot; &amp;gt;    README.md&amp;lt;br /&amp;gt;
-git init&amp;lt;br /&amp;gt;
-git add README.md&amp;lt;br /&amp;gt;
-git commit -m &quot;comentari&quot;&amp;lt;br /&amp;gt;
-git remote add origin https://github.com/usuari/repositori.git&amp;lt;br /&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;echo &quot;##  repositori&quot;    README.md
+git init
+git add README.md
+git commit -m &quot;comentari&quot;
+git remote add origin https://github.com/usuari/repositori.git
 git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
