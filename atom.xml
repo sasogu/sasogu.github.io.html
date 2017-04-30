@@ -4,7 +4,7 @@
  <title>sasogu</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2017-04-30T22:13:27+02:00</updated>
+ <updated>2017-04-30T22:35:50+02:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>sasogu</name>
@@ -45,11 +45,17 @@
 
 &lt;p&gt;El programa &lt;strong&gt;useradd&lt;/strong&gt; utilitza una colecció de valors per defecte emmagatzemats en /etc/default/useradd.&lt;/p&gt;
 
-&lt;p&gt;Es poden veure els valors per defecte executant:    &lt;br /&gt;
-  &amp;gt; $ useradd -D&lt;/p&gt;
+&lt;p&gt;Es poden veure els valors per defecte executant:&lt;/p&gt;
 
-&lt;p&gt;Es pot observar que falta l’intèrpret de comandaments per defecte. Per afegir-lo hem de fer:
-&amp;gt; $useradd -D -s /bin/bash&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ useradd -D
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Es pot observar que falta l’intèrpret de comandaments per defecte. Per afegir-lo hem de fer:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$useradd -D -s /bin/bash
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;També es pot editar el fitxer i afegir o ajustar els valors al nostre gust.&lt;/p&gt;
 
