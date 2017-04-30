@@ -330,6 +330,32 @@ $ git config --global user.email johndoe@example.com
 </code></pre>
 </div>
 
+<h2 id="si-fallem-podem-tronar-enrere">Si fallem podem tronar enrere</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git checkout --fitxer
+</code></pre>
+</div>
+
+<p>Inclús podem dir “tot el que hem fet fins ara no val per a res”</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git fetch origin &amp;&amp; git reset --hard origin/master
+</code></pre>
+</div>
+
+<h2 id="canviar-tot-el-contingut-duna-branca">Canviar tot el contingut d’una branca</h2>
+
+<p>Sobreescrivim una branca a altra:</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>    git branch -m master old-master
+    git branch -m gh-pages master
+    git push -f origin master
+</code></pre>
+</div>
+
+<p><code class="highlighter-rouge">-m</code> renomena</p>
+
+<p><code class="highlighter-rouge">-f</code> força</p>
+
 <h2 id="clonar-repositori-remot">Clonar repositori remot</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/sasogu/sasogu
@@ -347,6 +373,8 @@ $ git config --global user.email johndoe@example.com
 <div class="highlighter-rouge"><pre class="highlight"><code>$ git push
 </code></pre>
 </div>
+
+<p><strong><em>Opcional afegir la ruta htpps per apuntar a un repositori concret.</em></strong></p>
 
 <h2 id="evitar-que-git-demane-usuari-i-contrasenya">Evitar que GIT demane usuari i contrasenya</h2>
 
@@ -473,31 +501,6 @@ X
 <div class="highlighter-rouge"><pre class="highlight"><code>  $ git tag -a v1.0 -m 'Versió 1.0'     
 </code></pre>
 </div>
-
-<h2 id="si-fallem-podem-tronar-enrere">Si fallem podem tronar enrere</h2>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>  $ git checkout --fitxer
-</code></pre>
-</div>
-
-<p>Inclús podem dir “tot el que hem fet fins ara no val per a res”</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>  $ git fetch origin &amp;&amp; git reset --hard origin/master
-</code></pre>
-</div>
-
-<h2 id="canviar-tot-el-contingut-duna-branca">Canviar tot el contingut d’una branca</h2>
-
-<p>Sobreescrivim una branca a altra:</p>
-
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>git branch -m master old-master
-git branch -m gh-pages master
-git push -f origin master
-</code></pre>
-</div>
-
-<p><code class="highlighter-rouge">-m</code> renomena
-<code class="highlighter-rouge">-f</code> força</p>
 
 <h2 id="customitzar-els-colors">Customitzar els colors</h2>
 

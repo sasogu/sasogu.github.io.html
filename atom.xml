@@ -4,7 +4,7 @@
  <title>sasogu</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2017-04-30T22:55:12+02:00</updated>
+ <updated>2017-04-30T23:04:24+02:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>sasogu</name>
@@ -210,6 +210,32 @@ $ git config --global user.email johndoe@example.com
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
+&lt;h2 id=&quot;si-fallem-podem-tronar-enrere&quot;&gt;Si fallem podem tronar enrere&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git checkout --fitxer
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Inclús podem dir “tot el que hem fet fins ara no val per a res”&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git fetch origin &amp;amp;&amp;amp; git reset --hard origin/master
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;canviar-tot-el-contingut-duna-branca&quot;&gt;Canviar tot el contingut d’una branca&lt;/h2&gt;
+
+&lt;p&gt;Sobreescrivim una branca a altra:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    git branch -m master old-master
+    git branch -m gh-pages master
+    git push -f origin master
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-m&lt;/code&gt; renomena&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-f&lt;/code&gt; força&lt;/p&gt;
+
 &lt;h2 id=&quot;clonar-repositori-remot&quot;&gt;Clonar repositori remot&lt;/h2&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git clone https://github.com/sasogu/sasogu
@@ -227,6 +253,8 @@ $ git config --global user.email johndoe@example.com
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git push
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Opcional afegir la ruta htpps per apuntar a un repositori concret.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;evitar-que-git-demane-usuari-i-contrasenya&quot;&gt;Evitar que GIT demane usuari i contrasenya&lt;/h2&gt;
 
@@ -353,31 +381,6 @@ X
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ git tag -a v1.0 -m 'Versió 1.0'     
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-
-&lt;h2 id=&quot;si-fallem-podem-tronar-enrere&quot;&gt;Si fallem podem tronar enrere&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ git checkout --fitxer
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Inclús podem dir “tot el que hem fet fins ara no val per a res”&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ git fetch origin &amp;amp;&amp;amp; git reset --hard origin/master
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;canviar-tot-el-contingut-duna-branca&quot;&gt;Canviar tot el contingut d’una branca&lt;/h2&gt;
-
-&lt;p&gt;Sobreescrivim una branca a altra:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git branch -m master old-master
-git branch -m gh-pages master
-git push -f origin master
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-m&lt;/code&gt; renomena
-&lt;code class=&quot;highlighter-rouge&quot;&gt;-f&lt;/code&gt; força&lt;/p&gt;
 
 &lt;h2 id=&quot;customitzar-els-colors&quot;&gt;Customitzar els colors&lt;/h2&gt;
 
