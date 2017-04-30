@@ -4,7 +4,7 @@
  <title>sasogu</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2017-04-30T07:12:23+02:00</updated>
+ <updated>2017-04-30T07:29:36+02:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>sasogu</name>
@@ -88,7 +88,7 @@ $ git config --global user.email johndoe@example.com
 
 &lt;h2 id=&quot;clonar-repositori-remot&quot;&gt;11. Clonar repositori remot&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git clone https://github.com/inclusa/inclusa
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git clone https://github.com/sasogu/sasogu
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -106,7 +106,7 @@ $ git config --global user.email johndoe@example.com
 
 &lt;h2 id=&quot;evitar-que-git-demane-usuari-i-contrasenya&quot;&gt;14. Evitar que GIT demane usuari i contrasenya&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git config --global credential.helper. store
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git config --global credential.helper store
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
