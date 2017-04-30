@@ -4,7 +4,7 @@
  <title>sasogu</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2017-04-30T23:21:23+02:00</updated>
+ <updated>2017-04-30T23:35:43+02:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>sasogu</name>
@@ -194,7 +194,49 @@ $ git config --global user.email johndoe@example.com
 
 &lt;p&gt;Opcional afegir la ruta &lt;code class=&quot;highlighter-rouge&quot;&gt;htpps&lt;/code&gt; per apuntar a un repositori concret.&lt;/p&gt;
 
-&lt;h1 id=&quot;altres-comandaments&quot;&gt;Altres comandaments&lt;/h1&gt;
+&lt;h1 id=&quot;si-entrem-en-pnic&quot;&gt;Si entrem en pànic&lt;/h1&gt;
+
+&lt;h2 id=&quot;desfer-ltim-commit&quot;&gt;Desfer últim commit&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git reset --hard HEAD~1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;desfer-fins-arribar-a-5-commits-abans&quot;&gt;Desfer fins arribar a 5 commits abans&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git reset --hard HEAD~5
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://git-scm.com/book/es/v1/Fundamentos-de-Git-Deshaciendo-cosas&quot;&gt;Consulta la font&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;editant-lltim-commit-i-lltima-confirmaci&quot;&gt;Editant l’últim commit i l’última confirmació&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git commit --amend
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;La instantània és la mateixa, sols pots canviar el que has posat com a missatge del commit&lt;/p&gt;
+
+&lt;h2 id=&quot;desfer-el-que-tenim-al-git-local-i-baixar-el-que-hi-ha-al-server&quot;&gt;Desfer el que tenim al GIT local i baixar el que hi ha al server&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git fetch
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;si-fallem-podem-tronar-enrere&quot;&gt;Si fallem podem tronar enrere&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git checkout --fitxer
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Inclús podem dir “tot el que hem fet fins ara no val per a res”&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git fetch origin &amp;amp;&amp;amp; git reset --hard origin/master
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;treballant-amb-branques&quot;&gt;Treballant amb branques&lt;/h1&gt;
 
 &lt;h2 id=&quot;crear-branca&quot;&gt;Crear branca&lt;/h2&gt;
 
@@ -238,87 +280,6 @@ $ git push origin :gh-pages        ##  elimina branca remota
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;h2 id=&quot;desfer-ltim-commit&quot;&gt;Desfer últim commit&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git reset --hard HEAD~1
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;desfer-fins-arribar-a-5-commits-abans&quot;&gt;Desfer fins arribar a 5 commits abans&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git reset --hard HEAD~5
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://git-scm.com/book/es/v1/Fundamentos-de-Git-Deshaciendo-cosas&quot;&gt;Consulta la font&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;editant-lltim-commit-i-lltima-confirmaci&quot;&gt;Editant l’últim commit i l’última confirmació&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git commit --amend
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;La instantània és la mateixa, sols pots canviar el que has posat com a missatge del commit&lt;/p&gt;
-
-&lt;h2 id=&quot;desfer-el-que-tenim-al-git-local-i-baixar-el-que-hi-ha-al-server&quot;&gt;Desfer el que tenim al GIT local i baixar el que hi ha al server&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git fetch
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;si-fallem-podem-tronar-enrere&quot;&gt;Si fallem podem tronar enrere&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git checkout --fitxer
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Inclús podem dir “tot el que hem fet fins ara no val per a res”&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git fetch origin &amp;amp;&amp;amp; git reset --hard origin/master
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;no-guardar-la-contrasenya-en-disc&quot;&gt;No guardar la contrasenya en disc&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git config --global credential.helper 'cache --timeout=3600'
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Transcorreguda un hora tornarà a demanar la contrasenya.&lt;/p&gt;
-
-&lt;h2 id=&quot;iniciar-repositori-en-github-des-de-terminal-amb-el-protocol-https&quot;&gt;Iniciar repositori en GITHub des de terminal amb el protocol &lt;code class=&quot;highlighter-rouge&quot;&gt;https://&lt;/code&gt;&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;echo &quot;##  repositori&quot;    README.md
-git init
-git add README.md
-git commit -m &quot;comentari&quot;
-git remote add origin https://github.com/usuari/repositori.git
-git push -u origin master
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;explicaci&quot;&gt;Explicació&lt;/h3&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;echo&lt;/code&gt;: Afegix la informació al fitxer, si no existeix el crea&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git init&lt;/code&gt;: Inicia el repositori creant els arxius de rastreig a .git&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git add README.md&lt;/code&gt;: Afegig l’arxiu README.md per tal que es rastrege&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git commit -m &quot;comentari&quot;&lt;/code&gt;: Crea el punt d’emmagatzemmament del contigut actual, emmgatzema el contingut de del projecte establint fixant un punt, també afegeix un comentar&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git add remote add origin https://&lt;/code&gt;: Afegeig repositori remot&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git push -u origin master&lt;/code&gt;: publica el repositori local a la branca &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; remota&lt;/p&gt;
-
-&lt;h2 id=&quot;publicar-a-un-repositori-existent-a-github-des-de-la-lnia-de-comandamentsamb-el-protocol-https&quot;&gt;Publicar a un repositori existent a GITHub des de la línia de comandamentsamb el protocol &lt;code class=&quot;highlighter-rouge&quot;&gt;https://&lt;/code&gt;&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git remote add origin https://github.com/usuari/repositori.git
-
-git push -u origin master
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
 &lt;h2 id=&quot;branques-en-git&quot;&gt;Branques en GIT&lt;/h2&gt;
 
 &lt;p&gt;Tots els projectes, per defecte, tenen la branca MASTER on, al final, acaben totls els desenvolupaments que fem.&lt;/p&gt;
@@ -331,8 +292,9 @@ git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;checkout&lt;/code&gt; → canvia de branca
-&lt;code class=&quot;highlighter-rouge&quot;&gt;-b&lt;/code&gt; → crea la branca&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;checkout&lt;/code&gt; → canvia de branca&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-b&lt;/code&gt; → crea la branca&lt;/p&gt;
 
 &lt;p&gt;Quan arribem a un punt on tots els canvis que hem anat fent son estables i ens interessa que apareguen en la branca MASTER farem un &lt;strong&gt;merge&lt;/strong&gt;.&lt;/p&gt;
 
@@ -362,19 +324,53 @@ git push -u origin master
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;RELEASE&lt;/code&gt;: branca on podem agrupar certs pasos endaavnt, quan está provada podrem incorporar-ho a MASTER.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;MASTER		RELEASE		DEVELOP
-X
-|
-|\
-| \ __→__→__→__→__→__→__→__→__→__→__ X
-|                                    ↓
-|                                    |
-|                                    |
-|                 X __←__←__←__←__ ← X
-|                /
-|               /
-|__←__←__←__←_ X
-X          
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	MASTER		RELEASE		DEVELOP
+	X
+	|
+	|\
+	| \ __→__→__→__→__→__→__→__→__→__→__ X
+	|                                    ↓
+	|                                    |
+	|                                    |
+	|                 X __←__←__←__←__ ← X
+	|                /
+	|               /
+	|__←__←__←__←_ X
+	X          
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;altres-comandaments&quot;&gt;Altres comandaments&lt;/h1&gt;
+&lt;p&gt;##  Iniciar repositori en GITHub des de terminal amb el protocol &lt;code class=&quot;highlighter-rouge&quot;&gt;https://&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;echo &quot;##  repositori&quot;    README.md
+git init
+git add README.md
+git commit -m &quot;comentari&quot;
+git remote add origin https://github.com/usuari/repositori.git
+git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;explicaci&quot;&gt;Explicació&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;echo&lt;/code&gt;: Afegix la informació al fitxer, si no existeix el crea&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git init&lt;/code&gt;: Inicia el repositori creant els arxius de rastreig a .git&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git add README.md&lt;/code&gt;: Afegig l’arxiu README.md per tal que es rastrege&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git commit -m &quot;comentari&quot;&lt;/code&gt;: Crea el punt d’emmagatzemmament del contigut actual, emmgatzema el contingut de del projecte establint fixant un punt, també afegeix un comentar&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git add remote add origin https://&lt;/code&gt;: Afegeig repositori remot&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git push -u origin master&lt;/code&gt;: publica el repositori local a la branca &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; remota&lt;/p&gt;
+
+&lt;h2 id=&quot;publicar-a-un-repositori-existent-a-github-des-de-la-lnia-de-comandaments-amb-el-protocol-https&quot;&gt;Publicar a un repositori existent a GITHub des de la línia de comandaments amb el protocol &lt;code class=&quot;highlighter-rouge&quot;&gt;https://&lt;/code&gt;&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git remote add origin https://github.com/usuari/repositori.git
+
+git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -395,6 +391,14 @@ X
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git config --global alias.lg &lt;span class=&quot;s2&quot;&gt;&quot;log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&amp;lt;%an&amp;gt;%Creset' --abbrev-commit&quot;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+
+&lt;h2 id=&quot;no-guardar-la-contrasenya-en-disc&quot;&gt;No guardar la contrasenya en disc&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git config --global credential.helper 'cache --timeout=3600'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Transcorreguda un hora tornarà a demanar la contrasenya.&lt;/p&gt;
 
 &lt;h2 id=&quot;github&quot;&gt;GITHub&lt;/h2&gt;
 
