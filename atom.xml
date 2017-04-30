@@ -4,7 +4,7 @@
  <title>sasogu</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2017-04-30T22:35:50+02:00</updated>
+ <updated>2017-04-30T22:47:29+02:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>sasogu</name>
@@ -281,26 +281,7 @@ git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;h2 id=&quot;iniciar-repositori-en-github-des-de-terminal-amb-el-protocol-ssh&quot;&gt;20. Iniciar repositori en GITHub des de terminal amb el protocol &lt;code class=&quot;highlighter-rouge&quot;&gt;ssh&lt;/code&gt;&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;echo &quot;##  repositori&quot; &amp;gt;    README.md&amp;lt;br /&amp;gt;
-git init&amp;lt;br /&amp;gt;
-git add README.md&amp;lt;br /&amp;gt;
-git commit -m &quot;comentari&quot;&amp;lt;br /&amp;gt;
-git remote add origin git@github.com:usuari/repositori.git&amp;lt;br /&amp;gt;
-git push -u origin master&amp;lt;br /&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;publicar-a-un-repositori-existent-a-github-des-de-la-lnia-de-comandamentsamb-el-protocol-ssh&quot;&gt;21. Publicar a un repositori existent a GITHub des de la línia de comandamentsamb el protocol &lt;code class=&quot;highlighter-rouge&quot;&gt;ssh&lt;/code&gt;&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git remote add origin git@github.com:usuari/repositori.git
-
-git push -u origin master
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;branques-en-git&quot;&gt;22. Branques en GIT&lt;/h2&gt;
+&lt;h2 id=&quot;branques-en-git&quot;&gt;20. Branques en GIT&lt;/h2&gt;
 
 &lt;p&gt;Tots els projectes, per defecte, tenen la branca MASTER on, al final, acaben totls els desenvolupaments que fem.&lt;/p&gt;
 
@@ -333,15 +314,14 @@ git push -u origin master
 
 &lt;p&gt;Pot passar que hi hagen problemes al fer el &lt;code class=&quot;highlighter-rouge&quot;&gt;merge&lt;/code&gt;, en cas que GIT no sàpiga distingir quinies són les líies bones ens ho preguntarà.&lt;/p&gt;
 
-&lt;h2 id=&quot;etiquetes-en-git&quot;&gt;23. Etiquetes en GIT&lt;/h2&gt;
-
+&lt;h2 id=&quot;etiquetes-en-git&quot;&gt;21. Etiquetes en GIT&lt;/h2&gt;
 &lt;p&gt;Podem definir etiquetes per a gestionar versions del nostre codi o punts importants de desenvolupament, de forma que després ens siga fàcil identificar les fases de desenvolupament&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git tag -a v1.0 -m 'Versió 1.0'
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;h2 id=&quot;banques-en-git&quot;&gt;24. Banques en GIT&lt;/h2&gt;
+&lt;h2 id=&quot;banques-en-git&quot;&gt;22. Banques en GIT&lt;/h2&gt;
 
 &lt;p&gt;Les branques són línies de treball que tenen un objectiu. Posem un exemple de diferents branques amb diferents objectius de fases del treball.&lt;/p&gt;
 
@@ -367,7 +347,7 @@ X
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;h2 id=&quot;si-fallem-podem-tronar-enrere&quot;&gt;25. Si fallem podem tronar enrere&lt;/h2&gt;
+&lt;h2 id=&quot;si-fallem-podem-tronar-enrere&quot;&gt;23. Si fallem podem tronar enrere&lt;/h2&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git checkout --fitxer
 &lt;/code&gt;&lt;/pre&gt;
@@ -379,7 +359,7 @@ X
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;h2 id=&quot;canviar-tot-el-contingut-duna-branca&quot;&gt;26. Canviar tot el contingut d’una branca&lt;/h2&gt;
+&lt;h2 id=&quot;canviar-tot-el-contingut-duna-branca&quot;&gt;24. Canviar tot el contingut d’una branca&lt;/h2&gt;
 
 &lt;p&gt;Sobreescrivim una branca a altra:&lt;/p&gt;
 
@@ -392,7 +372,7 @@ git push -f origin master
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-m&lt;/code&gt; renomena
 ` -f` força&lt;/p&gt;
 
-&lt;h2 id=&quot;customitzar-els-colors&quot;&gt;27 Customitzar els colors&lt;/h2&gt;
+&lt;h2 id=&quot;customitzar-els-colors&quot;&gt;25 Customitzar els colors&lt;/h2&gt;
 
 &lt;p&gt;Configurem un alias.&lt;/p&gt;
 
@@ -402,13 +382,13 @@ git push -f origin master
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;h2 id=&quot;github&quot;&gt;28. GITHub&lt;/h2&gt;
+&lt;h2 id=&quot;github&quot;&gt;26. GITHub&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/#platform-linux&quot;&gt;Iniciar repositori&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;fonts&quot;&gt;29. Fonts&lt;/h2&gt;
+&lt;h2 id=&quot;fonts&quot;&gt;27. Fonts&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://rogerdudler.github.io/git-guide/index.es.html&quot;&gt;git - la guia sencilla&lt;/a&gt;&lt;/li&gt;
@@ -422,7 +402,7 @@ git push -f origin master
   &lt;li&gt;&lt;a href=&quot;http://www-cs-students.stanford.edu/~blynn/gitmagic/intl/es/&quot;&gt;GIT Màgic&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;video&quot;&gt;30. Video&lt;/h2&gt;
+&lt;h2 id=&quot;video&quot;&gt;28. Video&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://vimeo.com/39829002&quot;&gt;GITHub en Camon - Murcia&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=ZDR433b0HJY&quot;&gt;Introduction to GIT with Scott Chacon of GITHub&lt;/a&gt;&lt;/li&gt;

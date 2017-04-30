@@ -401,26 +401,7 @@ git push -u origin master
 </code></pre>
 </div>
 
-<h2 id="iniciar-repositori-en-github-des-de-terminal-amb-el-protocol-ssh">20. Iniciar repositori en GITHub des de terminal amb el protocol <code class="highlighter-rouge">ssh</code></h2>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>echo "##  repositori" &gt;    README.md&lt;br /&gt;
-git init&lt;br /&gt;
-git add README.md&lt;br /&gt;
-git commit -m "comentari"&lt;br /&gt;
-git remote add origin git@github.com:usuari/repositori.git&lt;br /&gt;
-git push -u origin master&lt;br /&gt;
-</code></pre>
-</div>
-
-<h2 id="publicar-a-un-repositori-existent-a-github-des-de-la-lnia-de-comandamentsamb-el-protocol-ssh">21. Publicar a un repositori existent a GITHub des de la línia de comandamentsamb el protocol <code class="highlighter-rouge">ssh</code></h2>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>git remote add origin git@github.com:usuari/repositori.git
-
-git push -u origin master
-</code></pre>
-</div>
-
-<h2 id="branques-en-git">22. Branques en GIT</h2>
+<h2 id="branques-en-git">20. Branques en GIT</h2>
 
 <p>Tots els projectes, per defecte, tenen la branca MASTER on, al final, acaben totls els desenvolupaments que fem.</p>
 
@@ -453,15 +434,14 @@ git push -u origin master
 
 <p>Pot passar que hi hagen problemes al fer el <code class="highlighter-rouge">merge</code>, en cas que GIT no sàpiga distingir quinies són les líies bones ens ho preguntarà.</p>
 
-<h2 id="etiquetes-en-git">23. Etiquetes en GIT</h2>
-
+<h2 id="etiquetes-en-git">21. Etiquetes en GIT</h2>
 <p>Podem definir etiquetes per a gestionar versions del nostre codi o punts importants de desenvolupament, de forma que després ens siga fàcil identificar les fases de desenvolupament</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ git tag -a v1.0 -m 'Versió 1.0'
 </code></pre>
 </div>
 
-<h2 id="banques-en-git">24. Banques en GIT</h2>
+<h2 id="banques-en-git">22. Banques en GIT</h2>
 
 <p>Les branques són línies de treball que tenen un objectiu. Posem un exemple de diferents branques amb diferents objectius de fases del treball.</p>
 
@@ -487,7 +467,7 @@ X
 </code></pre>
 </div>
 
-<h2 id="si-fallem-podem-tronar-enrere">25. Si fallem podem tronar enrere</h2>
+<h2 id="si-fallem-podem-tronar-enrere">23. Si fallem podem tronar enrere</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ git checkout --fitxer
 </code></pre>
@@ -499,7 +479,7 @@ X
 </code></pre>
 </div>
 
-<h2 id="canviar-tot-el-contingut-duna-branca">26. Canviar tot el contingut d’una branca</h2>
+<h2 id="canviar-tot-el-contingut-duna-branca">24. Canviar tot el contingut d’una branca</h2>
 
 <p>Sobreescrivim una branca a altra:</p>
 
@@ -512,7 +492,7 @@ git push -f origin master
 <p><code class="highlighter-rouge">-m</code> renomena
 ` -f` força</p>
 
-<h2 id="customitzar-els-colors">27 Customitzar els colors</h2>
+<h2 id="customitzar-els-colors">25 Customitzar els colors</h2>
 
 <p>Configurem un alias.</p>
 
@@ -522,13 +502,13 @@ git push -f origin master
 </code></pre>
 </div>
 
-<h2 id="github">28. GITHub</h2>
+<h2 id="github">26. GITHub</h2>
 
 <ul>
   <li><a href="https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/#platform-linux">Iniciar repositori</a></li>
 </ul>
 
-<h2 id="fonts">29. Fonts</h2>
+<h2 id="fonts">27. Fonts</h2>
 
 <ul>
   <li><a href="http://rogerdudler.github.io/git-guide/index.es.html">git - la guia sencilla</a></li>
@@ -542,7 +522,7 @@ git push -f origin master
   <li><a href="http://www-cs-students.stanford.edu/~blynn/gitmagic/intl/es/">GIT Màgic</a></li>
 </ul>
 
-<h2 id="video">30. Video</h2>
+<h2 id="video">28. Video</h2>
 <ul>
   <li><a href="https://vimeo.com/39829002">GITHub en Camon - Murcia</a></li>
   <li><a href="https://www.youtube.com/watch?v=ZDR433b0HJY">Introduction to GIT with Scott Chacon of GITHub</a></li>
