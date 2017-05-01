@@ -257,6 +257,60 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
   <article>
     <p><em>Els apunts originals són <a href="http://inclusa.github.io/2016/03/30/GIT-Principals-comandaments-que-utilitze.html">d’@inclusa</a>, aniré modificant i actualitzant al gust amb el que vaja aprenent de GITHub… Gràcies!!</em></p>
 
+<ul>
+  <li>
+    <h3 id="comandaments-fonamentalscomandaments-fonamentals"><a href="#comandaments-fonamentals">Comandaments fonamentals</a>.</h3>
+
+    <p>-<a href="#iniciar-un-repositori-git">Iniciar un repositori git</a></p>
+
+    <p>-<a href="#configurar-lo">Configurar-lo</a></p>
+
+    <p>-<a href="#evitar-que-git-demane-usuari-i-contrasenya">Evitar que GIT demane usuari i contrasenya</a></p>
+
+    <p>-<a href="#seguir-els-canvis">Seguir els canvis</a></p>
+
+    <p>-<a href="#afegir-arxius-de-rastreig">Afegir arxius de rastreig</a></p>
+
+    <p>-<a href="#clonar-repositori-remot">Clonar repositori remot</a></p>
+
+    <p>-<a href="#sincronitzar-des-del-repositori-remot-al-local">Sincronitzar des del repositori remot al local</a></p>
+
+    <p>-<a href="#sincronitzar-des-del-repositori-local-al-remot">Sincronitzar des del repositori local al remot</a></p>
+  </li>
+  <li>
+    <h3 id="si-entrem-en-pnicsi-entrem-en-panic"><a href="#si-entrem-en-panic">Si entrem en pànic</a></h3>
+
+    <p>-<a href="#desfer-ultim-commit">Desfer últim commit</a></p>
+
+    <p>-<a href="#desfer-fins-arribar-a-5-commits-abans">Desfer fins arribar a 5 commits abans</a></p>
+
+    <p>-<a href="#editant-l'ultim-commit-i-l'ultima-confirmacio">Editant l’últim commit i l’última confirmació</a></p>
+
+    <p>-<a href="#desfer-el-que-tenim-al-git-local-i-baixar-el-que-hi-ha-al-server">Desfer el que tenim al GIT local i baixar el que hi ha al server</a></p>
+
+    <p>-<a href="#si-fallem-podem-tornar-enrere">Si fallem podem tornar enrere</a></p>
+  </li>
+  <li>
+    <h3 id="treballant-amb-branquestreballant-amb-branques"><a href="#treballant-amb-branques">Treballant amb branques</a></h3>
+
+    <p>-<a href="#crear-branca">Crear branca</a></p>
+
+    <p>-<a href="#canviar-de-branca">Canviar de branca</a></p>
+
+    <p>-<a href="#mirar-en-quina-branca-estem">Mirar en quina branca estem</a></p>
+
+    <p>-<a href="#canviar-tot-el-contingut-d'una-branca">Canviar tot el contingut d’una branca</a></p>
+
+    <p>-<a href="#borrar-branca-i-borrar-la-del-server">Borrar branca i borrar-la del server</a></p>
+
+    <p>-<a href="#branques-en-git">Branques en GIT</a></p>
+
+    <p>-<a href="#linies-de-treball-amb-branques">Línies de treball amb branques</a></p>
+  </li>
+</ul>
+
+<p>-<a href="#altres-comandaments">Altres comandaments</a></p>
+
 <h1 id="comandaments-fonamentals">Comandaments fonamentals</h1>
 
 <h2 id="iniciar-un-repositori-git">Iniciar un repositori git</h2>
@@ -344,7 +398,7 @@ $ git config --global user.email johndoe@example.com
 </code></pre>
 </div>
 
-<h2 id="si-fallem-podem-tronar-enrere">Si fallem podem tronar enrere</h2>
+<h2 id="si-fallem-podem-tornar-enrere">Si fallem podem tornar enrere</h2>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ git checkout --fitxer
 </code></pre>
@@ -434,7 +488,7 @@ $ git push origin :gh-pages        ##  elimina branca remota
 
 <p>Pot passar que hi hagen problemes al fer el <code class="highlighter-rouge">merge</code>, en cas que GIT no sàpiga distingir quinies són les líies bones ens ho preguntarà.</p>
 
-<h2 id="branques-en-git-1">Branques en GIT</h2>
+<h2 id="lnies-de-treball-amb-branques">Línies de treball amb branques</h2>
 
 <p>Les branques són línies de treball que tenen un objectiu. Posem un exemple de diferents branques amb diferents objectius de fases del treball.</p>
 

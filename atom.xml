@@ -4,7 +4,7 @@
  <title>sasogu</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2017-04-30T23:35:43+02:00</updated>
+ <updated>2017-05-01T10:20:51+02:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>sasogu</name>
@@ -137,6 +137,60 @@
    <id>http://localhost:4000/2017/04/29/github</id>
    <content type="html">&lt;p&gt;&lt;em&gt;Els apunts originals són &lt;a href=&quot;http://inclusa.github.io/2016/03/30/GIT-Principals-comandaments-que-utilitze.html&quot;&gt;d’@inclusa&lt;/a&gt;, aniré modificant i actualitzant al gust amb el que vaja aprenent de GITHub… Gràcies!!&lt;/em&gt;&lt;/p&gt;
 
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;h3 id=&quot;comandaments-fonamentalscomandaments-fonamentals&quot;&gt;&lt;a href=&quot;#comandaments-fonamentals&quot;&gt;Comandaments fonamentals&lt;/a&gt;.&lt;/h3&gt;
+
+    &lt;p&gt;-&lt;a href=&quot;#iniciar-un-repositori-git&quot;&gt;Iniciar un repositori git&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;-&lt;a href=&quot;#configurar-lo&quot;&gt;Configurar-lo&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;-&lt;a href=&quot;#evitar-que-git-demane-usuari-i-contrasenya&quot;&gt;Evitar que GIT demane usuari i contrasenya&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;-&lt;a href=&quot;#seguir-els-canvis&quot;&gt;Seguir els canvis&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;-&lt;a href=&quot;#afegir-arxius-de-rastreig&quot;&gt;Afegir arxius de rastreig&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;-&lt;a href=&quot;#clonar-repositori-remot&quot;&gt;Clonar repositori remot&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;-&lt;a href=&quot;#sincronitzar-des-del-repositori-remot-al-local&quot;&gt;Sincronitzar des del repositori remot al local&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;-&lt;a href=&quot;#sincronitzar-des-del-repositori-local-al-remot&quot;&gt;Sincronitzar des del repositori local al remot&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h3 id=&quot;si-entrem-en-pnicsi-entrem-en-panic&quot;&gt;&lt;a href=&quot;#si-entrem-en-panic&quot;&gt;Si entrem en pànic&lt;/a&gt;&lt;/h3&gt;
+
+    &lt;p&gt;-&lt;a href=&quot;#desfer-ultim-commit&quot;&gt;Desfer últim commit&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;-&lt;a href=&quot;#desfer-fins-arribar-a-5-commits-abans&quot;&gt;Desfer fins arribar a 5 commits abans&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;-&lt;a href=&quot;#editant-l'ultim-commit-i-l'ultima-confirmacio&quot;&gt;Editant l’últim commit i l’última confirmació&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;-&lt;a href=&quot;#desfer-el-que-tenim-al-git-local-i-baixar-el-que-hi-ha-al-server&quot;&gt;Desfer el que tenim al GIT local i baixar el que hi ha al server&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;-&lt;a href=&quot;#si-fallem-podem-tornar-enrere&quot;&gt;Si fallem podem tornar enrere&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h3 id=&quot;treballant-amb-branquestreballant-amb-branques&quot;&gt;&lt;a href=&quot;#treballant-amb-branques&quot;&gt;Treballant amb branques&lt;/a&gt;&lt;/h3&gt;
+
+    &lt;p&gt;-&lt;a href=&quot;#crear-branca&quot;&gt;Crear branca&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;-&lt;a href=&quot;#canviar-de-branca&quot;&gt;Canviar de branca&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;-&lt;a href=&quot;#mirar-en-quina-branca-estem&quot;&gt;Mirar en quina branca estem&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;-&lt;a href=&quot;#canviar-tot-el-contingut-d'una-branca&quot;&gt;Canviar tot el contingut d’una branca&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;-&lt;a href=&quot;#borrar-branca-i-borrar-la-del-server&quot;&gt;Borrar branca i borrar-la del server&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;-&lt;a href=&quot;#branques-en-git&quot;&gt;Branques en GIT&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;-&lt;a href=&quot;#linies-de-treball-amb-branques&quot;&gt;Línies de treball amb branques&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;-&lt;a href=&quot;#altres-comandaments&quot;&gt;Altres comandaments&lt;/a&gt;&lt;/p&gt;
+
 &lt;h1 id=&quot;comandaments-fonamentals&quot;&gt;Comandaments fonamentals&lt;/h1&gt;
 
 &lt;h2 id=&quot;iniciar-un-repositori-git&quot;&gt;Iniciar un repositori git&lt;/h2&gt;
@@ -224,7 +278,7 @@ $ git config --global user.email johndoe@example.com
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;h2 id=&quot;si-fallem-podem-tronar-enrere&quot;&gt;Si fallem podem tronar enrere&lt;/h2&gt;
+&lt;h2 id=&quot;si-fallem-podem-tornar-enrere&quot;&gt;Si fallem podem tornar enrere&lt;/h2&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git checkout --fitxer
 &lt;/code&gt;&lt;/pre&gt;
@@ -314,7 +368,7 @@ $ git push origin :gh-pages        ##  elimina branca remota
 
 &lt;p&gt;Pot passar que hi hagen problemes al fer el &lt;code class=&quot;highlighter-rouge&quot;&gt;merge&lt;/code&gt;, en cas que GIT no sàpiga distingir quinies són les líies bones ens ho preguntarà.&lt;/p&gt;
 
-&lt;h2 id=&quot;branques-en-git-1&quot;&gt;Branques en GIT&lt;/h2&gt;
+&lt;h2 id=&quot;lnies-de-treball-amb-branques&quot;&gt;Línies de treball amb branques&lt;/h2&gt;
 
 &lt;p&gt;Les branques són línies de treball que tenen un objectiu. Posem un exemple de diferents branques amb diferents objectius de fases del treball.&lt;/p&gt;
 
